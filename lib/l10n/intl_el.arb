@@ -1,0 +1,110 @@
+{
+  "nwQuiz": "ΚΟΥΙΖ ΝΕΟΥ ΚΟΣΜΟΥ",
+  "@nwQuiz": {
+    "description": "The title for the app",
+    "type": "text",
+    "placeholders": {}
+  },
+  "welcomeTo": "ΚΑΛΩΣΟΡΙΣΑΤΕ ΣΤΟ",
+  "@welcomeTo": {
+    "description": "Title overhead welcome",
+    "type": "text",
+    "placeholders": {}
+  },
+  "exclamationPerfect": "ΤΕΛΕΙΑ!",
+  "@exclamationPerfect": {
+    "description": "End Game Title for a perfect Score",
+    "type": "text",
+    "placeholders": {}
+  },
+  "exclamationGreat": "ΑΨΟΓΑ!",
+  "@exclamationGreat": {
+    "description": "End Game Title for a great score",
+    "type": "text",
+    "placeholders": {}
+  },
+  "exclamationGood": "ΚΑΛΗ ΔΟΥΛΕΙΑ!",
+  "@exclamationGood": {
+    "description": "End Game Title for a good score",
+    "type": "text",
+    "placeholders": {}
+  },
+  "exclamationThank": "ΚΑΛΗ ΠΡΟΣΠΑΘΕΙΑ!",
+  "@exclamationThank": {
+    "description": "End Game Title for a low score",
+    "type": "text",
+    "placeholders": {}
+  },
+  "evaluationPerfect": "Θα μπορούσατε να είστε λόγιος της βίβλου! Χρησιμοποιήστε όλη αυτή την γνώση για εποικοδόμηση!",
+  "@evaluationPerfect": {
+    "description": "End Game evaluation for a perfect score",
+    "type": "text",
+    "placeholders": {}
+  },
+  "evaluationGreat": "Έχετε βαθιά γνώση της Αγίας Γραφής! Συνεχίστε την καλή δουλειά!",
+  "@evaluationGreat": {
+    "description": "End Game evaluation for a great score",
+    "type": "text",
+    "placeholders": {}
+  },
+  "evaluationGood": "Αποδείξατε ότι έχετε αρκετά καλή γνώση της Αγίας Γραφής! Συνεχίστε να προοδεύετε",
+  "@evaluationGood": {
+    "description": "End Game evaluation for a good score",
+    "type": "text",
+    "placeholders": {}
+  },
+  "evaluationThank": "Η απόκτηση βιβλικής γνώσης είναι ένα ταξίδι χωρίς τέλος. Συνεχίστε αυτη την αξιόλογη προσπάθεια!",
+  "@evaluationThank": {
+    "description": "End Game evaluation for a lower than half score",
+    "type": "text",
+    "placeholders": {}
+  },
+  "buttonEndGame": "Τέλος Παιχνιδιού",
+  "@buttonEndGame": {
+    "description": "End Game button text",
+    "type": "text",
+    "placeholders": {}
+  },
+  "inDepth": "ΣΕ ΒΑΘΟΣ",
+  "@inDepth": {
+    "description": "End Game In Depth title",
+    "type": "text",
+    "placeholders": {}
+  },
+  "correctAnswers": "Σωστές Απαντήσεις",
+  "@correctAnswers": {
+    "description": "End Game correct answers",
+    "type": "text",
+    "placeholders": {}
+  },
+  "totalPoints": "Συνολικοί Πόντοι",
+  "@totalPoints": {
+    "description": "End Game total points",
+    "type": "text",
+    "placeholders": {}
+  },
+  "settings": "Ρυθμίσεις",
+  "@settings": {
+    "description": "Settings Title",
+    "type": "text",
+    "placeholders": {}
+  },
+  "quickGameButton": "Γρήγορο Παιχνίδι",
+  "@quickGameButton": {
+    "description": "Quick Game Button Title",
+    "type": "text",
+    "placeholders": {}
+  },
+  "home": "Κεντρική",
+  "@home": {
+    "description": "Central app page on navigation bar",
+    "type": "text",
+    "placeholders": {}
+  },
+  "language": "Γλώσσα",
+  "@language": {
+    "description": "Settings language",
+    "type": "text",
+    "placeholders": {}
+  }
+}

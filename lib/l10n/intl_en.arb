@@ -1,0 +1,110 @@
+{
+  "nwQuiz": "NEW WORLD QUIZ",
+  "@nwQuiz": {
+    "description": "The title for the app",
+    "type": "text",
+    "placeholders": {}
+  },
+  "welcomeTo": "WELCOME TO",
+  "@welcomeTo": {
+    "description": "Title overhead welcome",
+    "type": "text",
+    "placeholders": {}
+  },
+  "exclamationPerfect": "PERFECT!",
+  "@exclamationPerfect": {
+    "description": "End Game Title for a perfect Score",
+    "type": "text",
+    "placeholders": {}
+  },
+  "exclamationGreat": "GREAT JOB!",
+  "@exclamationGreat": {
+    "description": "End Game Title for a great score",
+    "type": "text",
+    "placeholders": {}
+  },
+  "exclamationGood": "GOOD JOB!",
+  "@exclamationGood": {
+    "description": "End Game Title for a good score",
+    "type": "text",
+    "placeholders": {}
+  },
+  "exclamationThank": "NICE TRY!",
+  "@exclamationThank": {
+    "description": "End Game Title for a low score",
+    "type": "text",
+    "placeholders": {}
+  },
+  "evaluationPerfect": "You have reached the heights of Biblical knowledge. Put it to good use!",
+  "@evaluationPerfect": {
+    "description": "End Game evaluation for a perfect score",
+    "type": "text",
+    "placeholders": {}
+  },
+  "evaluationGreat": "You have an in depth knowledge of the Bible. Continue your hard work!",
+  "@evaluationGreat": {
+    "description": "End Game evaluation for a great score",
+    "type": "text",
+    "placeholders": {}
+  },
+  "evaluationGood": "You have demonstrated a working knowledge of the Bible. Always keep improving!",
+  "@evaluationGood": {
+    "description": "End Game evaluation for a good score",
+    "type": "text",
+    "placeholders": {}
+  },
+  "evaluationThank": "Gaining Biblical knowledge is a life long journey, never give up!",
+  "@evaluationThank": {
+    "description": "End Game evaluation for a lower than half score",
+    "type": "text",
+    "placeholders": {}
+  },
+  "buttonEndGame": "End Game",
+  "@buttonEndGame": {
+    "description": "End Game button text",
+    "type": "text",
+    "placeholders": {}
+  },
+  "inDepth": "More in depth",
+  "@inDepth": {
+    "description": "End Game In Depth title",
+    "type": "text",
+    "placeholders": {}
+  },
+  "correctAnswers": "Correct Answers",
+  "@correctAnswers": {
+    "description": "End Game correct answers",
+    "type": "text",
+    "placeholders": {}
+  },
+  "totalPoints": "Total Points",
+  "@totalPoints": {
+    "description": "End Game total points",
+    "type": "text",
+    "placeholders": {}
+  },
+  "settings": "Settings",
+  "@settings": {
+    "description": "Settings Title",
+    "type": "text",
+    "placeholders": {}
+  },
+  "quickGameButton": "Quick Game",
+  "@quickGameButton": {
+    "description": "Quick Game Button Title",
+    "type": "text",
+    "placeholders": {}
+  },
+  "home": "Home",
+  "@home": {
+    "description": "Central app page on navigation bar",
+    "type": "text",
+    "placeholders": {}
+  },
+  "language": "Language",
+  "@language": {
+    "description": "Settings language",
+    "type": "text",
+    "placeholders": {}
+  }
+}
