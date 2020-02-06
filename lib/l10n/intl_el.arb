@@ -106,5 +106,23 @@
     "description": "Settings language",
     "type": "text",
     "placeholders": {}
-  }
+  },
+  "by": "Από",
+  "@by": {
+    "description": "By whom was the question uploaded",
+    "type": "text",
+    "placeholders": {}
+  },
+  "correct": "Σωστές",
+    "@correct": {
+      "description": "Correct questions answered",
+      "type": "text",
+      "placeholders": {}
+    },
+    "wrong": "Λάθος",
+    "@wrong": {
+      "description": "Wrong questions answered",
+      "type": "text",
+      "placeholders": {}
+    }
 }

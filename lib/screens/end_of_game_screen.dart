@@ -46,6 +46,7 @@ class EndOfGameScreen extends StatelessWidget {
                   child: AutoSizeText(
                     exclamation,
                     style: Theme.of(context).textTheme.title,
+                    textAlign: TextAlign.center,
                   ),
                 ),
                 Container(

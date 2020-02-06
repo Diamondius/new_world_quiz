@@ -37,7 +37,9 @@ class _HomeScreenState extends State<HomeScreen> {
         child: pages[_selectedPageIndex],
       ),
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.deepPurple.shade900,
+        backgroundColor: Theme
+            .of(context)
+            .primaryColorDark,
         unselectedIconTheme: Theme.of(context).iconTheme,
         selectedIconTheme: Theme.of(context).accentIconTheme,
         currentIndex: _selectedPageIndex,

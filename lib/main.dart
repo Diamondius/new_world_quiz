@@ -68,7 +68,8 @@ class _MyAppState extends State<MyApp> {
                   title: "NW Quiz",
                   theme: ThemeData(
                     canvasColor: Colors.deepPurple.shade100,
-                    primarySwatch: Colors.deepPurple,
+                    primaryColor: Colors.deepPurple,
+                    primaryColorDark: Colors.deepPurple.shade900,
                     backgroundColor: Colors.deepPurple.shade300,
                     accentColor: Colors.green,
                     iconTheme: IconThemeData(color: Colors.white),

@@ -177,6 +177,30 @@ class AppLocalizations {
       desc: "Settings language",
     );
   }
+
+  String get by {
+    return Intl.message(
+      "By:",
+      name: "by",
+      desc: "By whom was the question uploaded",
+    );
+  }
+
+  String get correct {
+    return Intl.message(
+      "Correct",
+      name: "correct",
+      desc: "Correct questions answered",
+    );
+  }
+
+  String get wrong {
+    return Intl.message(
+      "Wrong",
+      name: "wrong",
+      desc: "Wrong questions answered",
+    );
+  }
 }
 
 class AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
@@ -187,6 +211,7 @@ class AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
     return const <Locale>[
       Locale('en', 'US'),
       Locale('el', 'GR'),
+      Locale('ru', 'RU'),
     ];
   }
 

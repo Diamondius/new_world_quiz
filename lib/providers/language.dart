@@ -5,15 +5,18 @@ import 'package:new_world_quiz/locale/app_localization.dart';
 class Language with ChangeNotifier {
   String nameEnglish;
   String nameGreek;
+  String nameRussian;
   String code;
   Locale locale;
 
-  Language(this.nameEnglish, this.nameGreek, this.code, this.locale);
+  Language(this.nameEnglish, this.nameGreek, this.nameRussian, this.code,
+      this.locale);
 
   //Current list of supported languages to use as maps on dropdown
   static List<Language> _languages = [
-    Language("English", "Αγγλικά", "en", Locale("en", "US")),
-    Language("Greek", "Ελληνικά", "el", Locale("el", "GR")),
+    Language("English", "Αγγλικά", "английский", "en", Locale("en", "US")),
+    Language("Greek", "Ελληνικά", "греческий", "el", Locale("el", "GR")),
+    Language("Russian", "Ρωσικά", "русский", "ru", Locale("ru", "RU")),
   ];
 
   static List<Language> get getLanguages {
@@ -26,6 +29,8 @@ class Language with ChangeNotifier {
     switch (currentLanguage) {
       case "el":
         return language.nameGreek;
+      case "ru":
+        return language.nameRussian;
       default:
         return language.nameEnglish;
     }
@@ -42,6 +47,8 @@ class Language with ChangeNotifier {
     switch (code) {
       case "el":
         return "Caudex";
+      case "ru":
+        return "Pattaya";
       default:
         return "CinzelDecorative";
     }
@@ -52,13 +59,18 @@ class Language with ChangeNotifier {
       case "el":
         return TextStyle(
             color: Colors.deepPurple.shade900,
-            fontFamily: "Caudex",
+            fontFamily: fontFamily(),
             fontSize: 40,
             fontWeight: FontWeight.bold);
+      case "ru":
+        return TextStyle(
+            color: Colors.deepPurple.shade900,
+            fontFamily: fontFamily(),
+            fontSize: 40);
       default:
         return TextStyle(
             color: Colors.deepPurple.shade900,
-            fontFamily: "CinzelDecorative",
+            fontFamily: fontFamily(),
             fontSize: 40,
             fontWeight: FontWeight.w900);
     }
@@ -69,14 +81,20 @@ class Language with ChangeNotifier {
       case "el":
         return TextStyle(
           color: Colors.deepPurple.shade900,
-          fontFamily: "Caudex",
+          fontFamily: fontFamily(),
           fontSize: 25,
           fontWeight: FontWeight.bold,
+        );
+      case "ru":
+        return TextStyle(
+          color: Colors.deepPurple.shade900,
+          fontFamily: fontFamily(),
+          fontSize: 25,
         );
       default:
         return TextStyle(
           color: Colors.deepPurple.shade900,
-          fontFamily: "CinzelDecorative",
+          fontFamily: fontFamily(),
           fontSize: 25,
           fontWeight: FontWeight.bold,
         );
@@ -88,13 +106,19 @@ class Language with ChangeNotifier {
       case "el":
         return TextStyle(
           color: Colors.deepPurple.shade900,
-          fontFamily: "Caudex",
+          fontFamily: fontFamily(),
+          fontSize: 20,
+        );
+      case "ru":
+        return TextStyle(
+          color: Colors.deepPurple.shade900,
+          fontFamily: fontFamily(),
           fontSize: 20,
         );
       default:
         return TextStyle(
           color: Colors.deepPurple.shade900,
-          fontFamily: "CinzelDecorative",
+          fontFamily: fontFamily(),
           fontSize: 20,
         );
     }

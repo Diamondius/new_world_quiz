@@ -1,5 +1,8 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:new_world_quiz/locale/app_localization.dart';
+import 'package:new_world_quiz/widgets/game_info_button.dart';
+import 'package:new_world_quiz/widgets/game_stats.dart';
 import 'package:provider/provider.dart';
 
 import '../helpers/screen_size_helper.dart';
@@ -21,6 +24,7 @@ class _GameScreenState extends State<GameScreen> {
   List<Question> _questionList = [];
   Games games;
   String question = "Loading";
+  String uploader = "Loading";
   String correctAnswer;
   List<String> buttonText = ["Loading", "Loading", "Loading", "Loading"];
   List<Color> buttonColors = [];
@@ -38,14 +42,14 @@ class _GameScreenState extends State<GameScreen> {
         }
       }
     });
-    if (answeredText == correctAnswer) {
-      games.answeredCorrectly(
-          _questionList[games.getCurrentQuestionId].difficulty);
-    }
     if (games.getCurrentRound != games.getNumberOfQuestions) {
       Future.delayed(Duration(seconds: 1)).then((_) {
         allowReset = true;
         games.increaseRound();
+        if (answeredText == correctAnswer) {
+          games.answeredCorrectly(
+              _questionList[games.getCurrentQuestionId].difficulty);
+        }
       });
     } else {
       Navigator.of(context).pushReplacementNamed(EndOfGameScreen.routeName);
@@ -72,6 +76,7 @@ class _GameScreenState extends State<GameScreen> {
       buttonText.shuffle();
       question = _questionList[currentQuestionId].question;
       correctAnswer = _questionList[currentQuestionId].correctAnswer;
+      uploader = _questionList[currentQuestionId].uploader;
       buttonColors = [
         Theme.of(context).primaryColor,
         Theme.of(context).primaryColor,
@@ -80,29 +85,64 @@ class _GameScreenState extends State<GameScreen> {
       ];
     }
     return Scaffold(
-      body: AbsorbPointer(
-        absorbing: !allowReset,
-        child: PageBackground(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              Container(
-                padding: EdgeInsets.all(8),
-                width: double.infinity,
-                height: screenHeight(context, dividedBy: 3),
-                child: AutoSizeText(question,
-                    style: Theme.of(context).textTheme.body1,
-                    textAlign: TextAlign.center),
-                alignment: Alignment.topCenter,
-              ),
-              Container(
-                decoration: BoxDecoration(
-                  border: Border.all(
-                      color: Theme.of(context).primaryColorDark, width: 5),
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(5),
-                  ),
+      body: PageBackground(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            Column(
+              children: <Widget>[
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    GameInfoButton(uploader),
+                    GameStats(AppLocalizations
+                        .of(context)
+                        .correct,
+                        games.getNumberOfCorrectAnswers),
+                    GameStats(AppLocalizations
+                        .of(context)
+                        .wrong,
+                        games.getNumberOfWrongAnswers),
+                    IconButton(
+                      icon: Icon(
+                        Icons.exit_to_app,
+                        color: Theme
+                            .of(context)
+                            .primaryColorDark,
+                        size: screenHeight(context, dividedBy: 20),
+                      ),
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                    )
+                  ],
                 ),
+                Container(
+                  padding: const EdgeInsets.all(0),
+                  width: double.infinity,
+                  height: screenHeight(context, dividedBy: 3),
+                  child: AutoSizeText(question,
+                      style: Theme
+                          .of(context)
+                          .textTheme
+                          .body1,
+                      textAlign: TextAlign.center),
+                  alignment: Alignment.topCenter,
+                ),
+              ],
+            ),
+            Container(
+              decoration: BoxDecoration(
+                border: Border.all(
+                    color: Theme
+                        .of(context)
+                        .primaryColorDark, width: 5),
+                borderRadius: BorderRadius.all(
+                  const Radius.circular(5),
+                ),
+              ),
+              child: AbsorbPointer(
+                absorbing: !allowReset,
                 child: Column(
                   children: <Widget>[
                     answerFlatButton(
@@ -138,9 +178,9 @@ class _GameScreenState extends State<GameScreen> {
                     ),
                   ],
                 ),
-              )
-            ],
-          ),
+              ),
+            )
+          ],
         ),
       ),
     );

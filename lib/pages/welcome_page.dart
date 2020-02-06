@@ -18,8 +18,9 @@ class WelcomePage extends StatelessWidget {
         Column(
           children: <Widget>[
             Container(
-              height: screenHeight(context, dividedBy: 24),
-              width: screenWidth(context, dividedBy: 1.90),
+              height: screenHeight(context, dividedBy: 28),
+              width: double.infinity,
+              alignment: Alignment.bottomCenter,
               child: AutoSizeText(
                 AppLocalizations.of(context).welcomeTo,
                 style: Theme.of(context).textTheme.overline,
@@ -30,13 +31,9 @@ class WelcomePage extends StatelessWidget {
             Container(
               height: screenHeight(context, dividedBy: 5),
               width: screenWidth(context, dividedBy: 1.05),
-              child: AutoSizeText(
-                AppLocalizations.of(context).nwQuiz,
-                style: Theme.of(context).textTheme.title,
-                overflow: TextOverflow.ellipsis,
-                maxLines: 2,
-                textAlign: TextAlign.center,
-                textScaleFactor: 1.5,
+              child: Image.asset(
+                "assets/images/title.png",
+                fit: BoxFit.contain,
               ),
             ),
           ],

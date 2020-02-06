@@ -74,6 +74,10 @@ class Games with ChangeNotifier {
     return _games.getNumberOfCorrectAnswers;
   }
 
+  int get getNumberOfWrongAnswers {
+    return (_games.getRoundNumber - 1) - _games.getNumberOfCorrectAnswers;
+  }
+
   int get getPoints {
     return _games.getPoints;
   }
