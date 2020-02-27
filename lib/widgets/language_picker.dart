@@ -2,7 +2,6 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../helpers/screen_size_helper.dart';
 import '../locale/app_localization.dart';
 import '../providers/language.dart';
 import '../providers/questions.dart';
@@ -23,17 +22,22 @@ class _LanguagePickerState extends State<LanguagePicker> {
     questions = Provider.of<Questions>(context);
     _selectedLanguage = language.code;
     return Container(
-      height: screenHeight(context, dividedBy: 22),
+      margin: const EdgeInsets.symmetric(vertical: 8),
       child: ListTile(
         leading: Icon(Icons.language),
         title: AutoSizeText(
           AppLocalizations.of(context).language,
           style: Theme.of(context).textTheme.overline,
+          maxLines: 1,
+          minFontSize: 25,
         ),
         trailing: FittedBox(
           fit: BoxFit.contain,
           child: DropdownButton(
-              style: TextStyle(color: Colors.deepPurple.shade900, fontSize: 30),
+              style: TextStyle(
+                  color: Theme
+                      .of(context)
+                      .primaryColorDark, fontSize: 30),
               elevation: 8,
               underline: Container(
                 height: 2,
@@ -43,9 +47,16 @@ class _LanguagePickerState extends State<LanguagePicker> {
                 return DropdownMenuItem(
                   value: language.code,
                   child: Center(
-                    child: AutoSizeText(
-                      "${Language.languageName(language, _selectedLanguage)}",
-                      textAlign: TextAlign.center,
+                    child: FittedBox(
+                      fit: BoxFit.contain,
+                      child: AutoSizeText(
+                        "${Language.languageName(language, _selectedLanguage)}",
+                        textAlign: TextAlign.center,
+                        style: Theme
+                            .of(context)
+                            .textTheme
+                            .body2,
+                      ),
                     ),
                   ),
                 );

@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 
 import '../helpers/screen_size_helper.dart';
 import '../locale/app_localization.dart';
+import '../models/game.dart';
 import '../providers/games.dart';
 import '../widgets/menu_button.dart';
 import '../widgets/page_background.dart';
@@ -13,7 +14,9 @@ class EndOfGameScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Games game = Provider.of<Games>(context, listen: false);
+    Games games = Provider.of<Games>(context,
+        listen: false); //Loads games object from provider for stats.
+    Game game = games.getGame;
     String evaluationText;
     String exclamation;
     if (game.getNumberOfQuestions == game.getNumberOfCorrectAnswers) {
@@ -32,72 +35,105 @@ class EndOfGameScreen extends StatelessWidget {
       exclamation = AppLocalizations.of(context).exclamationThank;
       evaluationText = AppLocalizations.of(context).evaluationThank;
     }
-    return Scaffold(
-      body: PageBackground(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            Column(
-              children: <Widget>[
-                Container(
-                  width: double.infinity,
-                  height: screenHeight(context, dividedBy: 7),
-                  alignment: Alignment.center,
-                  child: AutoSizeText(
-                    exclamation,
-                    style: Theme.of(context).textTheme.title,
-                    textAlign: TextAlign.center,
+    return WillPopScope(
+      //To avoid having the game wipe bypassed by using the back button
+      child: Scaffold(
+        body: PageBackground(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Column(
+                children: <Widget>[
+                  Container(
+                    width: double.infinity,
+                    height: screenHeight(context, dividedBy: 7),
+                    alignment: Alignment.center,
+                    child: AutoSizeText(
+                      exclamation,
+                      style: Theme
+                          .of(context)
+                          .textTheme
+                          .title,
+                      textAlign: TextAlign.center,
+                    ),
                   ),
-                ),
-                Container(
-                  padding: const EdgeInsets.only(top: 15),
-                  width: double.infinity,
-                  alignment: Alignment.center,
-                  height: screenHeight(context, dividedBy: 7),
-                  child: AutoSizeText(
-                    evaluationText,
-                    style: Theme.of(context).textTheme.overline,
+                  Container(
+                    padding: const EdgeInsets.only(top: 15),
+                    width: double.infinity,
+                    alignment: Alignment.center,
+                    height: screenHeight(context, dividedBy: 7),
+                    child: AutoSizeText(
+                      evaluationText,
+                      style: Theme
+                          .of(context)
+                          .textTheme
+                          .overline,
+                    ),
                   ),
-                ),
-              ],
-            ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: <Widget>[
-                Container(
-                  padding: const EdgeInsets.only(bottom: 10),
-                  width: double.infinity,
-                  height: screenHeight(context, dividedBy: 15),
-                  child: AutoSizeText(
-                    AppLocalizations.of(context).inDepth,
-                    style: Theme.of(context).textTheme.title,
-                    textAlign: TextAlign.center,
+                ],
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  Container(
+                    padding: const EdgeInsets.only(bottom: 10),
+                    width: double.infinity,
+                    height: screenHeight(context, dividedBy: 15),
+                    child: AutoSizeText(
+                      AppLocalizations
+                          .of(context)
+                          .inDepth,
+                      style: Theme
+                          .of(context)
+                          .textTheme
+                          .title,
+                      textAlign: TextAlign.center,
+                    ),
                   ),
-                ),
-                Container(
-                  width: double.infinity,
-                  height: screenHeight(context, dividedBy: 30),
-                  child: AutoSizeText(
-                    "${AppLocalizations.of(context).correctAnswers}: ${game.getNumberOfCorrectAnswers} / ${game.getNumberOfQuestions}",
-                    style: Theme.of(context).textTheme.overline,
+                  Container(
+                    width: double.infinity,
+                    height: screenHeight(context, dividedBy: 30),
+                    child: AutoSizeText(
+                      "${AppLocalizations
+                          .of(context)
+                          .correctAnswers}: ${game
+                          .getNumberOfCorrectAnswers} / ${game
+                          .getNumberOfQuestions}",
+                      style: Theme
+                          .of(context)
+                          .textTheme
+                          .overline,
+                    ),
                   ),
-                ),
-                Container(
-                  width: double.infinity,
-                  height: screenHeight(context, dividedBy: 30),
-                  child: AutoSizeText(
-                      "${AppLocalizations.of(context).totalPoints}: ${game.getPoints}",
-                      style: Theme.of(context).textTheme.overline),
-                ),
-              ],
-            ),
-            MenuButton(AppLocalizations.of(context).buttonEndGame, () {
-              Navigator.of(context).pop();
-            })
-          ],
+                  Container(
+                    width: double.infinity,
+                    height: screenHeight(context, dividedBy: 30),
+                    child: AutoSizeText(
+                        "${AppLocalizations
+                            .of(context)
+                            .totalPoints}: ${game.getPoints}",
+                        style: Theme
+                            .of(context)
+                            .textTheme
+                            .overline),
+                  ),
+                ],
+              ),
+              MenuButton(AppLocalizations
+                  .of(context)
+                  .buttonEndGame, () {
+                games
+                    .nullifyGame(); //Wipes game when window is removed by End game Button Press
+                Navigator.of(context).pop();
+              })
+            ],
+          ),
         ),
       ),
+      onWillPop: () =>
+          games
+              .nullifyGame(), //Wipes game when window is removed by back button
     );
   }
 }

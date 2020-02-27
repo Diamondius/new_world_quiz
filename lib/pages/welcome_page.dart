@@ -1,13 +1,12 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:new_world_quiz/providers/games.dart';
+import 'package:new_world_quiz/screens/game_screen.dart';
+import 'package:new_world_quiz/widgets/menu_button.dart';
 import 'package:provider/provider.dart';
 
 import '../helpers/screen_size_helper.dart';
 import '../locale/app_localization.dart';
-import '../providers/games.dart';
-import '../providers/questions.dart';
-import '../screens/game_screen.dart';
-import '../widgets/menu_button.dart';
 
 class WelcomePage extends StatelessWidget {
   @override
@@ -29,7 +28,7 @@ class WelcomePage extends StatelessWidget {
               ),
             ),
             Container(
-              height: screenHeight(context, dividedBy: 5),
+              height: screenHeight(context, dividedBy: 6),
               width: screenWidth(context, dividedBy: 1.05),
               child: Image.asset(
                 "assets/images/title.png",
@@ -41,10 +40,9 @@ class WelcomePage extends StatelessWidget {
         MenuButton(
           AppLocalizations.of(context).quickGameButton,
           () {
-            Provider.of<Games>(context, listen: false).newGame(
-                Provider.of<Questions>(context, listen: false)
-                    .getQuestions
-                    .length);
+            Games games = Provider.of<Games>(context, listen: false);
+            games.gameType = 0;
+            games.newCustomGame(20, 0);
             Navigator.of(context).pushNamed(GameScreen.routeName);
           },
         ),

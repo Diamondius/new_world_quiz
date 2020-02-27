@@ -1,16 +1,21 @@
+import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:new_world_quiz/locale/app_localization.dart';
-import 'package:new_world_quiz/widgets/game_info_button.dart';
-import 'package:new_world_quiz/widgets/game_stats.dart';
+import 'package:new_world_quiz/providers/settings.dart';
 import 'package:provider/provider.dart';
+import 'package:vibrate/vibrate.dart';
 
 import '../helpers/screen_size_helper.dart';
+import '../locale/app_localization.dart';
+import '../models/game.dart';
 import '../models/question.dart';
 import '../providers/games.dart';
 import '../providers/questions.dart';
 import '../screens/end_of_game_screen.dart';
 import '../widgets/divider_question_button.dart';
+import '../widgets/game_info_button.dart';
+import '../widgets/game_stats.dart';
 import '../widgets/page_background.dart';
 
 class GameScreen extends StatefulWidget {
@@ -22,13 +27,17 @@ class GameScreen extends StatefulWidget {
 
 class _GameScreenState extends State<GameScreen> {
   List<Question> _questionList = [];
+  Game game;
   Games games;
   String question = "Loading";
   String uploader = "Loading";
+  String source = "Loading";
   String correctAnswer;
   List<String> buttonText = ["Loading", "Loading", "Loading", "Loading"];
   List<Color> buttonColors = [];
   bool allowReset = true;
+  bool sounds = true;
+  bool vibrate = true;
 
   void buttonPressed(String answeredText, int id) {
     setState(() {
@@ -42,13 +51,20 @@ class _GameScreenState extends State<GameScreen> {
         }
       }
     });
-    if (games.getCurrentRound != games.getNumberOfQuestions) {
+    if (game.getRoundNumber != game.getNumberOfQuestions) {
       Future.delayed(Duration(seconds: 1)).then((_) {
         allowReset = true;
         games.increaseRound();
         if (answeredText == correctAnswer) {
-          games.answeredCorrectly(
-              _questionList[games.getCurrentQuestionId].difficulty);
+          if (sounds) playLocalAsset("sounds/correct.mp3");
+          game.answeredCorrectly(
+              _questionList[game.getCurrentQuestionId].difficulty);
+        } else {
+          if (sounds) playLocalAsset("sounds/wrong.mp3");
+          if (vibrate) Vibrate.vibrate();
+        }
+        if (game.roundNumber < game.numberOfQuestions) {
+          games.saveCurrentGame();
         }
       });
     } else {
@@ -56,17 +72,30 @@ class _GameScreenState extends State<GameScreen> {
     }
   }
 
+  //AudioPlayer for correct and wrong sounds
+  Future<AudioPlayer> playLocalAsset(String soundFile) async {
+    if (sounds) {
+      AudioCache cache = new AudioCache();
+      return await cache.play(soundFile);
+    }
+    return null;
+  }
+
   @override
   void initState() {
     super.initState();
     _questionList = Provider.of<Questions>(context, listen: false).getQuestions;
+    var settings = Provider.of<Settings>(context, listen: false);
+    sounds = settings.getSoundSetting;
+    vibrate = settings.getVibrationSetting;
   }
 
   @override
   Widget build(BuildContext context) {
     games = Provider.of<Games>(context);
+    game = games.getGame;
     if (allowReset) {
-      int currentQuestionId = games.getCurrentQuestionId;
+      int currentQuestionId = game.getCurrentQuestionId;
       buttonText = [
         _questionList[currentQuestionId].correctAnswer,
         _questionList[currentQuestionId].wrongAnswer1,
@@ -77,6 +106,13 @@ class _GameScreenState extends State<GameScreen> {
       question = _questionList[currentQuestionId].question;
       correctAnswer = _questionList[currentQuestionId].correctAnswer;
       uploader = _questionList[currentQuestionId].uploader;
+      source = _questionList[currentQuestionId].source;
+      print(
+          "Id: ${currentQuestionId
+              .toString()} Difficulty:${_questionList[currentQuestionId]
+              .difficulty
+              .toString()} Secondary id: ${_questionList[currentQuestionId]
+              .id}");
       buttonColors = [
         Theme.of(context).primaryColor,
         Theme.of(context).primaryColor,
@@ -85,38 +121,51 @@ class _GameScreenState extends State<GameScreen> {
       ];
     }
     return Scaffold(
+      appBar: PreferredSize(
+        preferredSize: Size(
+          double.infinity,
+          screenHeight(context, dividedBy: 13),
+        ),
+        child: Container(
+          color: Theme
+              .of(context)
+              .primaryColorDark,
+          padding: EdgeInsets.only(
+              top: screenHeightToolbar(context, increasedBy: 4), bottom: 4),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              GameInfoButton(uploader, source),
+              GameStats(AppLocalizations
+                  .of(context)
+                  .correct,
+                  game.getNumberOfCorrectAnswers),
+              GameStats(AppLocalizations
+                  .of(context)
+                  .wrong,
+                  game.getNumberOfWrongAnswers),
+              IconButton(
+                icon: Icon(
+                  Icons.exit_to_app,
+                  color: Theme
+                      .of(context)
+                      .primaryColorLight,
+                  size: screenHeight(context, dividedBy: 20),
+                ),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              )
+            ],
+          ),
+        ),
+      ),
       body: PageBackground(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Column(
               children: <Widget>[
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    GameInfoButton(uploader),
-                    GameStats(AppLocalizations
-                        .of(context)
-                        .correct,
-                        games.getNumberOfCorrectAnswers),
-                    GameStats(AppLocalizations
-                        .of(context)
-                        .wrong,
-                        games.getNumberOfWrongAnswers),
-                    IconButton(
-                      icon: Icon(
-                        Icons.exit_to_app,
-                        color: Theme
-                            .of(context)
-                            .primaryColorDark,
-                        size: screenHeight(context, dividedBy: 20),
-                      ),
-                      onPressed: () {
-                        Navigator.of(context).pop();
-                      },
-                    )
-                  ],
-                ),
                 Container(
                   padding: const EdgeInsets.all(0),
                   width: double.infinity,
@@ -125,7 +174,7 @@ class _GameScreenState extends State<GameScreen> {
                       style: Theme
                           .of(context)
                           .textTheme
-                          .body1,
+                          .overline,
                       textAlign: TextAlign.center),
                   alignment: Alignment.topCenter,
                 ),
@@ -148,7 +197,7 @@ class _GameScreenState extends State<GameScreen> {
                     answerFlatButton(
                       buttonText[0],
                       buttonColors[0],
-                      () {
+                          () {
                         buttonPressed(buttonText[0], 0);
                       },
                     ),
@@ -156,7 +205,7 @@ class _GameScreenState extends State<GameScreen> {
                     answerFlatButton(
                       buttonText[1],
                       buttonColors[1],
-                      () {
+                          () {
                         buttonPressed(buttonText[1], 1);
                       },
                     ),
@@ -164,7 +213,7 @@ class _GameScreenState extends State<GameScreen> {
                     answerFlatButton(
                       buttonText[2],
                       buttonColors[2],
-                      () {
+                          () {
                         buttonPressed(buttonText[2], 2);
                       },
                     ),
@@ -172,7 +221,7 @@ class _GameScreenState extends State<GameScreen> {
                     answerFlatButton(
                       buttonText[3],
                       buttonColors[3],
-                      () {
+                          () {
                         buttonPressed(buttonText[3], 3);
                       },
                     ),

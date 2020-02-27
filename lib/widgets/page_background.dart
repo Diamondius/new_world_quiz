@@ -13,7 +13,7 @@ class PageBackground extends StatelessWidget {
     return Container(
         padding: EdgeInsets.symmetric(
           horizontal: screenWidth(context, dividedBy: 18),
-          vertical: screenHeight(context, dividedBy: 32),
+          vertical: screenHeight(context, dividedBy: 40),
         ),
         margin: EdgeInsets.only(top: statusBarHeight(context)),
         decoration: BackgroundGradient(),

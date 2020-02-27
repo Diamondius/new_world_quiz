@@ -1,7 +1,9 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:new_world_quiz/helpers/screen_size_helper.dart';
 
+import '../helpers/screen_size_helper.dart';
+
+//An image with a text on top that shows a specific stat of the  game like correct answers or wrong answers
 class GameStats extends StatelessWidget {
   final String questionStatType;
   final int stat;
@@ -11,7 +13,9 @@ class GameStats extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: screenHeight(context, dividedBy: 150)),
+      margin: EdgeInsets.only(
+          top: screenHeight(context,
+              dividedBy: 150)), //Icons do not seem very much aligned otherwise
       height: screenHeight(context, dividedBy: 20),
       width: screenWidth(context, dividedBy: 3.3),
       child: Stack(

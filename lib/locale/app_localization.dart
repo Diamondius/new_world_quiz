@@ -166,7 +166,7 @@ class AppLocalizations {
     return Intl.message(
       "Home",
       name: "home",
-      desc: "Central app page on navigaton bar",
+      desc: "Central app page on navigation bar",
     );
   }
 
@@ -199,6 +199,144 @@ class AppLocalizations {
       "Wrong",
       name: "wrong",
       desc: "Wrong questions answered",
+    );
+  }
+
+  String get source {
+    return Intl.message(
+      "Source",
+      name: "source",
+      desc: "Source of a question found in Online Library",
+    );
+  }
+
+  String get noSource {
+    return Intl.message(
+      "No Source",
+      name: "noSource",
+      desc: "No source found for the specific question",
+    );
+  }
+
+  String get cancel {
+    return Intl.message(
+      "Cancel",
+      name: "cancel",
+      desc: "Cancel button to close Alert window",
+    );
+  }
+
+  String get go {
+    return Intl.message(
+      "Go",
+      name: "go",
+      desc:
+      "Go button on the alert window to move to the Watchtower library external site",
+    );
+  }
+
+  String get sourceAlertWindowDescription {
+    return Intl.message(
+      "This will open an external browser window to the Watchtower Online Library, where the source of the question is referred.\n The site's double arrow icon can be used to change languages.\n If you choose to proceed, you forfeit this question.",
+      name: "sourceAlertWindowDescription",
+      desc:
+      "Description for the source alert window. \n Is a symbol for changing the line.",
+    );
+  }
+
+  String get custom {
+    return Intl.message(
+      "Custom",
+      name: "custom",
+      desc: "Custom Game Icon Text",
+    );
+  }
+
+  String get customGame {
+    return Intl.message(
+      "Custom Game",
+      name: "customGame",
+      desc: "Custom Game Title Text Text",
+    );
+  }
+
+  String get play {
+    return Intl.message(
+      "Play",
+      name: "play",
+      desc: "Play Game",
+    );
+  }
+
+  String get continueGame {
+    return Intl.message(
+      "Continue",
+      name: "continueGame",
+      desc: "Continue Game",
+    );
+  }
+
+  String get random {
+    return Intl.message(
+      "Random",
+      name: "random",
+      desc: "Random difficulty of questions",
+    );
+  }
+
+  String get easy {
+    return Intl.message(
+      "Easy",
+      name: "easy",
+      desc: "Easy difficulty of questions",
+    );
+  }
+
+  String get normal {
+    return Intl.message(
+      "Normal",
+      name: "normal",
+      desc: "Normal difficulty of questions",
+    );
+  }
+
+  String get hard {
+    return Intl.message(
+      "Hard",
+      name: "hard",
+      desc: "Hard difficulty of questions",
+    );
+  }
+
+  String get difficulty {
+    return Intl.message(
+      "Difficulty",
+      name: "difficulty",
+      desc: "How difficult the questions are",
+    );
+  }
+
+  String get questions {
+    return Intl.message(
+      "Questions",
+      name: "questions",
+      desc: "Questions",
+    );
+  }
+
+  String get sound {
+    return Intl.message(
+      "Sound",
+      name: "sound",
+      desc: "Option to enable or disable sounds",
+    );
+  }
+
+  String get vibration {
+    return Intl.message(
+      "Vibration",
+      name: "vibration",
+      desc: "Option to enable or disable vibration",
     );
   }
 }

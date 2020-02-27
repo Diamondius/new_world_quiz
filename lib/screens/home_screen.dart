@@ -20,8 +20,8 @@ class _HomeScreenState extends State<HomeScreen> {
   int _selectedPageIndex = 0; //Page selected index
   List<Widget> pages = [
     WelcomePage(),
-    SettingsPage(),
     CustomGamePage(),
+    SettingsPage(),
   ]; //List of bodies to be loaded
   //Changes page index when bottom NavigationBar button is pressed
   void _selectScreen(int index) {
@@ -32,6 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Widget build(BuildContext context) {
     return Scaffold(
+      /*  appBar: _selectedPageIndex == 1 ? AppBar() : null,*/
       //Shared Background and measurements
       body: PageBackground(
         child: pages[_selectedPageIndex],
@@ -49,6 +50,15 @@ class _HomeScreenState extends State<HomeScreen> {
             icon: Icon(Icons.home),
             title: NavigationBarIconText(
               AppLocalizations.of(context).home,
+            ),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.play_arrow),
+            activeIcon: Icon(Icons.play_circle_filled),
+            title: NavigationBarIconText(
+              AppLocalizations
+                  .of(context)
+                  .play,
             ),
           ),
           BottomNavigationBarItem(

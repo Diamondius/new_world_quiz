@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:new_world_quiz/providers/settings.dart';
 import 'package:provider/provider.dart';
 
 import './helpers/shared_preferences.dart';
@@ -58,9 +59,15 @@ class _MyAppState extends State<MyApp> {
               ChangeNotifierProvider.value(
                 value: questions,
               ),
-              ChangeNotifierProvider(
-                create: (_) => Games(),
+              ChangeNotifierProxyProvider<Questions, Games>(
+                create: (_) => Games(questions),
+                update: (BuildContext context, Questions questions,
+                    Games previous) =>
+                    Games(questions),
               ),
+              ChangeNotifierProvider(
+                create: (_) => Settings(),
+              )
             ],
             child: Consumer<Language>(
               builder: (context, language, child) {
@@ -71,6 +78,7 @@ class _MyAppState extends State<MyApp> {
                     primaryColor: Colors.deepPurple,
                     primaryColorDark: Colors.deepPurple.shade900,
                     backgroundColor: Colors.deepPurple.shade300,
+                    dividerColor: Colors.deepPurple.shade100,
                     accentColor: Colors.green,
                     iconTheme: IconThemeData(color: Colors.white),
                     accentIconTheme: IconThemeData(color: Colors.green),
