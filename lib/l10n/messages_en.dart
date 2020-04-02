@@ -30,16 +30,16 @@ class MessageLookup extends MessageLookupByLibrary {
         "continueGame": MessageLookupByLibrary.simpleMessage("Continue"),
         "correct": MessageLookupByLibrary.simpleMessage("Correct"),
         "correctAnswer": MessageLookupByLibrary.simpleMessage("Correct Answer"),
-        "correctAnswers": MessageLookupByLibrary.simpleMessage(
-            "Correct Answers"),
+        "correctAnswers":
+        MessageLookupByLibrary.simpleMessage("Correct Answers"),
         "custom": MessageLookupByLibrary.simpleMessage("Custom"),
         "customGame": MessageLookupByLibrary.simpleMessage("Custom Game"),
         "difficulty": MessageLookupByLibrary.simpleMessage("Difficulty"),
         "easy": MessageLookupByLibrary.simpleMessage("Easy"),
-        "emptyAnswerError": MessageLookupByLibrary.simpleMessage(
-            "Please write an answer!"),
-        "emptyQuestionError": MessageLookupByLibrary.simpleMessage(
-            "Please write a question!"),
+        "emptyAnswerError":
+        MessageLookupByLibrary.simpleMessage("Please write an answer!"),
+        "emptyQuestionError":
+        MessageLookupByLibrary.simpleMessage("Please write a question!"),
         "evaluationGood": MessageLookupByLibrary.simpleMessage(
             "You have demonstrated a working knowledge of the Bible. Always keep improving!"),
         "evaluationGreat": MessageLookupByLibrary.simpleMessage(
@@ -73,13 +73,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "questions": MessageLookupByLibrary.simpleMessage("Questions"),
         "quickGameButton": MessageLookupByLibrary.simpleMessage("Quick Game"),
         "random": MessageLookupByLibrary.simpleMessage("Random"),
-        "reportQuestion": MessageLookupByLibrary.simpleMessage(
-            "Report Question"),
+        "reportQuestion":
+        MessageLookupByLibrary.simpleMessage("Report Question"),
         "reportQuestionUnderline": MessageLookupByLibrary.simpleMessage(
             "Please share what is wrong with this question"),
         "settings": MessageLookupByLibrary.simpleMessage("Settings"),
-        "shareQuestion": MessageLookupByLibrary.simpleMessage(
-            "Share your Question"),
+        "shareQuestion":
+        MessageLookupByLibrary.simpleMessage("Share your Question"),
         "shareQuestionUnderline": MessageLookupByLibrary.simpleMessage(
             "Please share a question with us"),
         "shareThoughts": MessageLookupByLibrary.simpleMessage(

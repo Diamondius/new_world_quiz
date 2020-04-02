@@ -39,7 +39,7 @@ class DatabaseHelper {
   Future<Database> initializeDatabase() async {
     //Database version control. Refreshes the database on every code change since it is using preloaded sqLite database.
     PackageInfo packageInfo =
-    await PackageInfo.fromPlatform(); //Loads the app's version
+        await PackageInfo.fromPlatform(); //Loads the app's version
     String version = packageInfo.version;
     String savedVersion = await SharedPreferencesHelper.getVersion();
     print("Version: $version");
@@ -64,7 +64,7 @@ class DatabaseHelper {
       // Copy from asset
       ByteData data = await rootBundle.load(join("assets", "questions.db"));
       List<int> bytes =
-      data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
+          data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
       // Write and flush the bytes written
       await File(path).writeAsBytes(bytes, flush: true);
     }

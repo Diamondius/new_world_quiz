@@ -140,8 +140,7 @@ class _GameScreenState extends State<GameScreen> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              GameInfoButton(_uploader,
-                  _source),
+              GameInfoButton(_uploader, _source),
               //Button that opens a list with info about the question
               GameStats(
                   AppLocalizations

@@ -23,19 +23,19 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static _notInlinedMessages(_) =>
       <String, Function>{
-        "buttonEndGame": MessageLookupByLibrary.simpleMessage(
-            "Τέλος Παιχνιδιού"),
+        "buttonEndGame":
+        MessageLookupByLibrary.simpleMessage("Τέλος Παιχνιδιού"),
         "by": MessageLookupByLibrary.simpleMessage("Από"),
         "cancel": MessageLookupByLibrary.simpleMessage("Έξοδος"),
         "contact": MessageLookupByLibrary.simpleMessage("Επικοινωνήστε"),
         "continueGame": MessageLookupByLibrary.simpleMessage("Συνέχεια"),
         "correct": MessageLookupByLibrary.simpleMessage("Σωστές"),
         "correctAnswer": MessageLookupByLibrary.simpleMessage("Σωστή Απάντηση"),
-        "correctAnswers": MessageLookupByLibrary.simpleMessage(
-            "Σωστές Απαντήσεις"),
+        "correctAnswers":
+        MessageLookupByLibrary.simpleMessage("Σωστές Απαντήσεις"),
         "custom": MessageLookupByLibrary.simpleMessage("Προσαρμοσμένο"),
-        "customGame": MessageLookupByLibrary.simpleMessage(
-            "Προσαρμοσμένο Παιχνίδι"),
+        "customGame":
+        MessageLookupByLibrary.simpleMessage("Προσαρμοσμένο Παιχνίδι"),
         "difficulty": MessageLookupByLibrary.simpleMessage("Δυσκολία"),
         "easy": MessageLookupByLibrary.simpleMessage("Εύκολο"),
         "emptyAnswerError": MessageLookupByLibrary.simpleMessage(
@@ -50,12 +50,12 @@ class MessageLookup extends MessageLookupByLibrary {
             "Θα μπορούσατε να είστε λόγιος της βίβλου! Χρησιμοποιήστε όλη αυτή την γνώση για εποικοδόμηση!"),
         "evaluationThank": MessageLookupByLibrary.simpleMessage(
             "Η απόκτηση βιβλικής γνώσης είναι ένα ταξίδι χωρίς τέλος. Συνεχίστε αυτη την αξιόλογη προσπάθεια!"),
-        "exclamationGood": MessageLookupByLibrary.simpleMessage(
-            "ΚΑΛΗ ΔΟΥΛΕΙΑ!"),
+        "exclamationGood":
+        MessageLookupByLibrary.simpleMessage("ΚΑΛΗ ΔΟΥΛΕΙΑ!"),
         "exclamationGreat": MessageLookupByLibrary.simpleMessage("ΑΨΟΓΑ!"),
         "exclamationPerfect": MessageLookupByLibrary.simpleMessage("ΤΕΛΕΙΑ!"),
-        "exclamationThank": MessageLookupByLibrary.simpleMessage(
-            "ΚΑΛΗ ΠΡΟΣΠΑΘΕΙΑ!"),
+        "exclamationThank":
+        MessageLookupByLibrary.simpleMessage("ΚΑΛΗ ΠΡΟΣΠΑΘΕΙΑ!"),
         "feedback": MessageLookupByLibrary.simpleMessage("Φόρμα σχολιασμού"),
         "feedbackEmpty": MessageLookupByLibrary.simpleMessage(
             "Παρακαλώ γράψτε σχόλια πριν αποστείλετε την φόρμα!"),
@@ -75,16 +75,16 @@ class MessageLookup extends MessageLookupByLibrary {
         "play": MessageLookupByLibrary.simpleMessage("Παίξτε"),
         "question": MessageLookupByLibrary.simpleMessage("Ερώτηση"),
         "questions": MessageLookupByLibrary.simpleMessage("Ερωτήσεις"),
-        "quickGameButton": MessageLookupByLibrary.simpleMessage(
-            "Γρήγορο Παιχνίδι"),
+        "quickGameButton":
+        MessageLookupByLibrary.simpleMessage("Γρήγορο Παιχνίδι"),
         "random": MessageLookupByLibrary.simpleMessage("Τυχαίο"),
-        "reportQuestion": MessageLookupByLibrary.simpleMessage(
-            "Αναφορά Ερώτησης"),
+        "reportQuestion":
+        MessageLookupByLibrary.simpleMessage("Αναφορά Ερώτησης"),
         "reportQuestionUnderline": MessageLookupByLibrary.simpleMessage(
             "Παρακαλώ πείτε μας το πρόβλημα με αυτή την ερώτηση"),
         "settings": MessageLookupByLibrary.simpleMessage("Ρυθμίσεις"),
-        "shareQuestion": MessageLookupByLibrary.simpleMessage(
-            "Μοιραστέτε μια ερώτηση"),
+        "shareQuestion":
+        MessageLookupByLibrary.simpleMessage("Μοιραστέτε μια ερώτηση"),
         "shareQuestionUnderline": MessageLookupByLibrary.simpleMessage(
             "Παρακαλώ μοιραστίτε μια ερώτηση με εμάς"),
         "shareThoughts": MessageLookupByLibrary.simpleMessage(

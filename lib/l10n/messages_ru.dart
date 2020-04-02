@@ -29,19 +29,19 @@ class MessageLookup extends MessageLookupByLibrary {
         "contact": MessageLookupByLibrary.simpleMessage("Контакт"),
         "continueGame": MessageLookupByLibrary.simpleMessage("Продолжить"),
         "correct": MessageLookupByLibrary.simpleMessage("Правильные"),
-        "correctAnswer": MessageLookupByLibrary.simpleMessage(
-            "Правильны ответ"),
-        "correctAnswers": MessageLookupByLibrary.simpleMessage(
-            "Правильные Ответы"),
+        "correctAnswer":
+        MessageLookupByLibrary.simpleMessage("Правильны ответ"),
+        "correctAnswers":
+        MessageLookupByLibrary.simpleMessage("Правильные Ответы"),
         "custom": MessageLookupByLibrary.simpleMessage("Индивидуально"),
-        "customGame": MessageLookupByLibrary.simpleMessage(
-            "Индивидуальная игра"),
+        "customGame":
+        MessageLookupByLibrary.simpleMessage("Индивидуальная игра"),
         "difficulty": MessageLookupByLibrary.simpleMessage("Уровень"),
         "easy": MessageLookupByLibrary.simpleMessage("Лёгкий"),
-        "emptyAnswerError": MessageLookupByLibrary.simpleMessage(
-            "Пожалуйста напиши ответ!"),
-        "emptyQuestionError": MessageLookupByLibrary.simpleMessage(
-            "Пожалуйста напиши вопрос!"),
+        "emptyAnswerError":
+        MessageLookupByLibrary.simpleMessage("Пожалуйста напиши ответ!"),
+        "emptyQuestionError":
+        MessageLookupByLibrary.simpleMessage("Пожалуйста напиши вопрос!"),
         "evaluationGood": MessageLookupByLibrary.simpleMessage(
             "Ты показал неплохое знание Библии. Продолжай улучшаться!"),
         "evaluationGreat": MessageLookupByLibrary.simpleMessage(
@@ -51,14 +51,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "evaluationThank": MessageLookupByLibrary.simpleMessage(
             "Приобретение Библейских знаний - это путешествие длиною в жизнь. Никогда не сдавайся!"),
         "exclamationGood": MessageLookupByLibrary.simpleMessage("НЕПЛОХО!"),
-        "exclamationGreat": MessageLookupByLibrary.simpleMessage(
-            "ВЕЛИКОЛЕПНО!"),
+        "exclamationGreat":
+        MessageLookupByLibrary.simpleMessage("ВЕЛИКОЛЕПНО!"),
         "exclamationPerfect": MessageLookupByLibrary.simpleMessage("ИДЕАЛЬНО!"),
-        "exclamationThank": MessageLookupByLibrary.simpleMessage(
-            "ХОРОШАЯ ПОПЫТКА!"),
+        "exclamationThank":
+        MessageLookupByLibrary.simpleMessage("ХОРОШАЯ ПОПЫТКА!"),
         "feedback": MessageLookupByLibrary.simpleMessage("Отклик"),
-        "feedbackEmpty": MessageLookupByLibrary.simpleMessage(
-            "Напиши пожалуйста отзыв."),
+        "feedbackEmpty":
+        MessageLookupByLibrary.simpleMessage("Напиши пожалуйста отзыв."),
         "feedbackFewChars": MessageLookupByLibrary.simpleMessage(
             "Напиши пожалуйста больше чем 10 знаков."),
         "go": MessageLookupByLibrary.simpleMessage("Давай"),
@@ -77,13 +77,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "questions": MessageLookupByLibrary.simpleMessage("Вопросы"),
         "quickGameButton": MessageLookupByLibrary.simpleMessage("Быстрая игра"),
         "random": MessageLookupByLibrary.simpleMessage("Случайный"),
-        "reportQuestion": MessageLookupByLibrary.simpleMessage(
-            "Сообщить о вопросе"),
+        "reportQuestion":
+        MessageLookupByLibrary.simpleMessage("Сообщить о вопросе"),
         "reportQuestionUnderline": MessageLookupByLibrary.simpleMessage(
             "Напиши пожалуйста, что с этим вопросом не так."),
         "settings": MessageLookupByLibrary.simpleMessage("Настройки"),
-        "shareQuestion": MessageLookupByLibrary.simpleMessage(
-            "Поделись своим вопросом"),
+        "shareQuestion":
+        MessageLookupByLibrary.simpleMessage("Поделись своим вопросом"),
         "shareQuestionUnderline": MessageLookupByLibrary.simpleMessage(
             "Пожалуйста поделись своим вопросом."),
         "shareThoughts": MessageLookupByLibrary.simpleMessage(
