@@ -1,5 +1,5 @@
 {
-  "@@last_modified": "2020-02-27T22:44:34.813885",
+  "@@last_modified": "2020-03-31T11:21:23.532827",
   "nwQuiz": "NEW WORLD QUIZ",
   "@nwQuiz": {
     "description": "The title for the app",
@@ -218,14 +218,116 @@
   },
   "sound": "Sound",
   "@sound": {
-     "description": "Option to enable or disable sounds",
-     "type": "text",
-     "placeholders": {}
-   },
-   "vibration": "Vibration",
-   "@vibration": {
-     "description": "Option to enable or disable vibration",
-     "type": "text",
-     "placeholders": {}
-   },
- }
+    "description": "Option to enable or disable sounds",
+    "type": "text",
+    "placeholders": {}
+  },
+  "vibration": "Vibration",
+  "@vibration": {
+    "description": "Option to enable or disable vibration",
+    "type": "text",
+    "placeholders": {}
+  },
+  "feedback": "Feedback",
+  "@feedback": {
+    "description": "Feedback from the user for the app",
+    "type": "text",
+    "placeholders": {}
+  },
+  "shareThoughts": "Please share your thoughts about the app",
+  "@shareThoughts": {
+    "description": "Implores user to share their thoughts about the app",
+    "type": "text",
+    "placeholders": {}
+  },
+  "feedbackEmpty": "Please write some feedback before sending",
+  "@feedbackEmpty": {
+    "description": "Message for when someone leaves the feedback textfield empty",
+    "type": "text",
+    "placeholders": {}
+  },
+  "feedbackFewChars": "Please write more than 10 characters",
+  "@feedbackFewChars": {
+    "description": "Message for when someone writes under 10 characters in feedback",
+    "type": "text",
+    "placeholders": {}
+  },
+  "contact": "Contact Us",
+  "@contact": {
+    "description": "Contact us title on settings page",
+    "type": "text",
+    "placeholders": {}
+  },
+  "shareQuestion": "Share your Question",
+  "@shareQuestion": {
+    "description": "Share a question on settings page",
+    "type": "text",
+    "placeholders": {}
+  },
+  "reportQuestion": "Report Question",
+  "@reportQuestion": {
+    "description": "Report question title on the page",
+    "type": "text",
+    "placeholders": {}
+  },
+  "newQuestion": "New Question",
+  "@newQuestion": {
+    "description": "Report question title on the page",
+    "type": "text",
+    "placeholders": {}
+  },
+  "reportQuestionUnderline": "Please share what is wrong with this question",
+  "@reportQuestionUnderline": {
+    "description": "Ask them to share the issue with the question",
+    "type": "text",
+    "placeholders": {}
+  },
+  "shareQuestionUnderline": "Please share a question with us",
+  "@shareQuestionUnderline": {
+    "description": "Ask them to share a question under the title",
+    "type": "text",
+    "placeholders": {}
+  },
+  "question": "Question",
+  "@question": {
+    "description": "Single question for the new question form hint",
+    "type": "text",
+    "placeholders": {}
+  },
+  "correctAnswer": "Correct Answer",
+  "@correctAnswer": {
+    "description": "Correct answer for the new question form hint",
+    "type": "text",
+    "placeholders": {}
+  },
+  "wrongAnswer": "Wrong Answer",
+  "@wrongAnswer": {
+    "description": "Wrong answer for the new question form hint",
+    "type": "text",
+    "placeholders": {}
+  },
+  "emptyQuestionError": "Please write a question!",
+  "@emptyQuestionError": {
+    "description": "Error you see when the question form is empty",
+    "type": "text",
+    "placeholders": {}
+  },
+  "emptyAnswerError": "Please write an answer!",
+  "@emptyAnswerError": {
+    "description": "Error you see when the answer form is empty",
+    "type": "text",
+    "placeholders": {}
+  },
+  "shortQuestionError": "Please make the question longer!",
+  "@shortQuestionError": {
+    "description": "Error you see when the question form has too few characters",
+    "type": "text",
+    "placeholders": {}
+  },
+  "longAnswerError": "Shorten the answer to fewer than 100 characters!",
+  "@longAnswerError": {
+    "description": "Error you see when the answer form is too long",
+    "type": "text",
+    "placeholders": {}
+  }
+}

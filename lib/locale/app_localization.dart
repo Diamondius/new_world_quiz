@@ -339,6 +339,142 @@ class AppLocalizations {
       desc: "Option to enable or disable vibration",
     );
   }
+
+  String get feedback {
+    return Intl.message(
+      "Feedback",
+      name: "feedback",
+      desc: "Feedback from the user for the app",
+    );
+  }
+
+  String get shareThoughts {
+    return Intl.message(
+      "Please share your thoughts about the app",
+      name: "shareThoughts",
+      desc: "Implores user to share their thoughts about the app",
+    );
+  }
+
+  String get feedbackEmpty {
+    return Intl.message(
+      "Please write some feedback before sending",
+      name: "feedbackEmpty",
+      desc: "Message for when someone leaves the feedback textfield empty",
+    );
+  }
+
+  String get feedbackFewChars {
+    return Intl.message(
+      "Please write more than 10 characters",
+      name: "feedbackFewChars",
+      desc: "Message for when someone writes under 10 characters in feedback",
+    );
+  }
+
+  String get contact {
+    return Intl.message(
+      "Contact Us",
+      name: "contact",
+      desc: "Contact us title on settings page",
+    );
+  }
+
+  String get shareQuestion {
+    return Intl.message(
+      "Share your Question",
+      name: "shareQuestion",
+      desc: "Share a question on settings page",
+    );
+  }
+
+  String get reportQuestion {
+    return Intl.message(
+      "Report Question",
+      name: "reportQuestion",
+      desc: "Report question title on the page",
+    );
+  }
+
+  String get newQuestion {
+    return Intl.message(
+      "New Question",
+      name: "newQuestion",
+      desc: "Report question title on the page",
+    );
+  }
+
+  String get reportQuestionUnderline {
+    return Intl.message(
+      "Please share what is wrong with this question",
+      name: "reportQuestionUnderline",
+      desc: "Ask them to share the issue with the question",
+    );
+  }
+
+  String get shareQuestionUnderline {
+    return Intl.message(
+      "Please share a question with us",
+      name: "shareQuestionUnderline",
+      desc: "Ask them to share a question under the title",
+    );
+  }
+
+  String get question {
+    return Intl.message(
+      "Question",
+      name: "question",
+      desc: "Single question for the new question form hint",
+    );
+  }
+
+  String get correctAnswer {
+    return Intl.message(
+      "Correct Answer",
+      name: "correctAnswer",
+      desc: "Correct answer for the new question form hint",
+    );
+  }
+
+  String get wrongAnswer {
+    return Intl.message(
+      "Wrong Answer",
+      name: "wrongAnswer",
+      desc: "Wrong answer for the new question form hint",
+    );
+  }
+
+  String get emptyQuestionError {
+    return Intl.message(
+      "Please write a question!",
+      name: "emptyQuestionError",
+      desc: "Error you see when the question form is empty",
+    );
+  }
+
+  String get emptyAnswerError {
+    return Intl.message(
+      "Please write an answer!",
+      name: "emptyAnswerError",
+      desc: "Error you see when the answer form is empty",
+    );
+  }
+
+  String get shortQuestionError {
+    return Intl.message(
+      "Please make the question longer!",
+      name: "shortQuestionError",
+      desc: "Error you see when the question form has too few characters",
+    );
+  }
+
+  String get longAnswerError {
+    return Intl.message(
+      "Shorten the answer to fewer than 100 characters!",
+      name: "longAnswerError",
+      desc: "Error you see when the answer form is too long",
+    );
+  }
 }
 
 class AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
@@ -350,6 +486,8 @@ class AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
       Locale('en', 'US'),
       Locale('el', 'GR'),
       Locale('ru', 'RU'),
+      Locale("de", "DE"),
+      Locale("sq", "AL"),
     ];
   }
 

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "11812619315",
+    "firebase_url": "https://nw-quiz.firebaseio.com",
+    "project_id": "nw-quiz",
+    "storage_bucket": "nw-quiz.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:11812619315:android:6c21cf336211f2e3cdcf46",
+        "android_client_info": {
+          "package_name": "eu.datamond.new_world_quiz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "11812619315-o2a4a71pu9mt9gbmtg89dtf6ii4calc5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "eu.datamond.new_world_quiz",
+            "certificate_hash": "de456c9dafc752de6b19e920cb8c16746fee8efa"
+          }
+        },
+        {
+          "client_id": "11812619315-cr5nd8368pgvsnjkcahtd8c99srqenl6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBzKH2iuXiX2hEDkdVqvzHwK2m2rxFt15c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "11812619315-cr5nd8368pgvsnjkcahtd8c99srqenl6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

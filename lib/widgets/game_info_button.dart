@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:new_world_quiz/screens/submit_feedback_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -6,11 +7,13 @@ import '../helpers/screen_size_helper.dart';
 import '../locale/app_localization.dart';
 import '../providers/games.dart';
 
+//Widget that pulls a popUpMenu with more info about a specific question
 class GameInfoButton extends StatefulWidget {
   final String uploader;
   final String source;
 
-  GameInfoButton(this.uploader, this.source);
+  GameInfoButton(this.uploader,
+      this.source); //Gets uploader and source from the GameScreen so Provider does not need to be called
 
   @override
   _GameInfoButtonState createState() => _GameInfoButtonState();
@@ -22,11 +25,13 @@ class _GameInfoButtonState extends State<GameInfoButton> {
   Widget build(BuildContext context) {
     return PopupMenuButton(
       onSelected: (value) {
+        //If the second button of the list is pressed shows the Alert Dialog that guides people to the WoL site
         if (value == 1) {
           showDialog(
             context: context,
             builder: (BuildContext context) {
               return AlertDialog(
+                elevation: 8,
                 title: Text(
                   AppLocalizations
                       .of(context)
@@ -72,6 +77,9 @@ class _GameInfoButtonState extends State<GameInfoButton> {
               );
             },
           );
+        } else if (value == 2) {
+          Navigator.of(context).pushNamed(SubmitFeedbackScreen.routeName,
+              arguments: userForms.errorQuestion);
         }
       },
       icon: Icon(
@@ -103,6 +111,23 @@ class _GameInfoButtonState extends State<GameInfoButton> {
             ),
             enabled: widget.source == null ? false : true,
           ),
+        );
+        list.add(PopupMenuDivider(
+          height: 10,
+        ));
+        list.add(
+          PopupMenuItem(
+              value: 2,
+              child: Text(
+                AppLocalizations
+                    .of(context)
+                    .reportQuestion,
+                style: Theme
+                    .of(context)
+                    .textTheme
+                    .button,
+              ),
+              enabled: true),
         );
         list.add(PopupMenuDivider(
           height: 10,

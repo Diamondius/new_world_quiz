@@ -1,14 +1,14 @@
 import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
-import 'package:new_world_quiz/helpers/shared_preferences.dart';
-import 'package:new_world_quiz/models/question.dart';
-import 'package:new_world_quiz/providers/questions.dart';
 
+import '../helpers/shared_preferences.dart';
 import '../models/game.dart';
+import '../models/question.dart';
+import '../providers/questions.dart';
 
 class Games with ChangeNotifier {
-  Games(this.questions);
+  Games(this.questions); //Loads the questions provider as a proxy provider
 
   Questions questions;
 
@@ -49,8 +49,7 @@ class Games with ChangeNotifier {
     }
     if (questionList.length > 0) {
       questionList.forEach((question) {
-        idList.add(question.id -
-            1); //Minus 1 is necessary because database index starts from 1
+        idList.add(question.id);
       });
     }
     idList.shuffle();

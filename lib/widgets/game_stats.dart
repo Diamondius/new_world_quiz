@@ -17,7 +17,7 @@ class GameStats extends StatelessWidget {
           top: screenHeight(context,
               dividedBy: 150)), //Icons do not seem very much aligned otherwise
       height: screenHeight(context, dividedBy: 20),
-      width: screenWidth(context, dividedBy: 3.3),
+      width: screenWidth(context, dividedBy: 2.9),
       child: Stack(
         fit: StackFit.expand,
         children: <Widget>[
@@ -26,12 +26,15 @@ class GameStats extends StatelessWidget {
             fit: BoxFit.fill,
           ),
           Container(
-            padding: const EdgeInsets.symmetric(horizontal: 11, vertical: 2),
+            padding: EdgeInsets.symmetric(
+              horizontal: screenWidth(context, dividedBy: 35),
+            ),
             alignment: Alignment.center,
             child: AutoSizeText(
               "$questionStatType: $stat",
               style: Theme.of(context).textTheme.body1,
-              textAlign: TextAlign.center,
+              textAlign: TextAlign.left,
+              maxLines: 1,
             ),
           ),
         ],

@@ -2,7 +2,9 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:flutter/services.dart';
+import 'package:new_world_quiz/helpers/shared_preferences.dart';
 import 'package:new_world_quiz/models/question.dart';
+import 'package:package_info/package_info.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 
@@ -35,12 +37,24 @@ class DatabaseHelper {
   }
 
   Future<Database> initializeDatabase() async {
+    //Database version control. Refreshes the database on every code change since it is using preloaded sqLite database.
+    PackageInfo packageInfo =
+    await PackageInfo.fromPlatform(); //Loads the app's version
+    String version = packageInfo.version;
+    String savedVersion = await SharedPreferencesHelper.getVersion();
+    print("Version: $version");
+    print("Saved Version: $savedVersion");
     var databasesPath = await getDatabasesPath();
     var path = join(databasesPath, "questions.db");
-    //ToDo: Find a way to version control so the database does not copy every time
     // Check if the database exists
     var exists = await databaseExists(path);
-
+    if (exists && version != savedVersion) {
+      //If version is changed it deletes the previous one and loads a new one
+      await deleteDatabase(path);
+      print("Database Deleted");
+      SharedPreferencesHelper.setVersion(version);
+      exists = await databaseExists(path);
+    }
     if (!exists) {
       // Should happen only the first time you launch your application
       print("Creating new copy from asset");
@@ -50,12 +64,13 @@ class DatabaseHelper {
       // Copy from asset
       ByteData data = await rootBundle.load(join("assets", "questions.db"));
       List<int> bytes =
-          data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
+      data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
       // Write and flush the bytes written
       await File(path).writeAsBytes(bytes, flush: true);
     }
     // open the database
     var questionsDatabase = await openDatabase(path, readOnly: true);
+    questionsDatabase.getVersion().then((onValue) {});
     return questionsDatabase;
   }
 

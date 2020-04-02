@@ -6,17 +6,61 @@ class Language with ChangeNotifier {
   String nameEnglish;
   String nameGreek;
   String nameRussian;
+  String nameGerman;
+  String nameAlbanian;
   String code;
   Locale locale;
 
-  Language(this.nameEnglish, this.nameGreek, this.nameRussian, this.code,
-      this.locale);
+  Language(this.nameEnglish, this.nameGreek, this.nameRussian, this.nameGerman,
+      this.nameAlbanian, this.code, this.locale);
 
   //Current list of supported languages to use as maps on dropdown
   static List<Language> _languages = [
-    Language("English", "Αγγλικά", "английский", "en", Locale("en", "US")),
-    Language("Greek", "Ελληνικά", "греческий", "el", Locale("el", "GR")),
-    Language("Russian", "Ρωσικά", "русский", "ru", Locale("ru", "RU")),
+    Language(
+      "English",
+      "Αγγλικά",
+      "Английский",
+      "Englisch",
+      "Angleze",
+      "en",
+      Locale("en", "US"),
+    ),
+    Language(
+      "Greek",
+      "Ελληνικά",
+      "Греческий",
+      "Griechisch",
+      "Greke",
+      "el",
+      Locale("el", "GR"),
+    ),
+    Language(
+      "Russian",
+      "Ρωσικά",
+      "Русский",
+      "Russisch",
+      "Ruse",
+      "ru",
+      Locale("ru", "RU"),
+    ),
+    Language(
+      "German",
+      "Γερμανικά",
+      "Немецкий",
+      "Deutsch",
+      "Gjermane",
+      "de",
+      Locale("de", "DE"),
+    ),
+    Language(
+      "Albanian",
+      "Αλβανικά",
+      "Албанский",
+      "Albanisch",
+      "Shqipe",
+      "sq",
+      Locale("sq", "AL"),
+    ),
   ];
 
   static List<Language> get getLanguages {
@@ -31,6 +75,10 @@ class Language with ChangeNotifier {
         return language.nameGreek;
       case "ru":
         return language.nameRussian;
+      case "de":
+        return language.nameGerman;
+      case "sq":
+        return language.nameAlbanian;
       default:
         return language.nameEnglish;
     }
@@ -46,6 +94,7 @@ class Language with ChangeNotifier {
   String fontFamily() {
     switch (code) {
       case "el":
+      case "sq":
         return "Caudex";
       case "ru":
         return "Pattaya";
@@ -57,6 +106,7 @@ class Language with ChangeNotifier {
   TextStyle titleTextStyle() {
     switch (code) {
       case "el":
+      case "sq":
         return TextStyle(
             color: Colors.deepPurple.shade900,
             fontFamily: fontFamily(),
@@ -79,6 +129,7 @@ class Language with ChangeNotifier {
   TextStyle overheadTextStyle() {
     switch (code) {
       case "el":
+      case "sq":
         return TextStyle(
           color: Colors.deepPurple.shade900,
           fontFamily: fontFamily(),
@@ -104,6 +155,7 @@ class Language with ChangeNotifier {
   TextStyle settingsTextStyle() {
     switch (code) {
       case "el":
+      case "sq":
         return TextStyle(
           color: Colors.deepPurple.shade900,
           fontFamily: fontFamily(),

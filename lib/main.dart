@@ -3,7 +3,6 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:new_world_quiz/providers/settings.dart';
 import 'package:provider/provider.dart';
 
 import './helpers/shared_preferences.dart';
@@ -11,9 +10,11 @@ import './locale/app_localization.dart';
 import './providers/games.dart';
 import './providers/language.dart';
 import './providers/questions.dart';
+import './providers/settings.dart';
 import './screens/end_of_game_screen.dart';
 import './screens/game_screen.dart';
 import './screens/home_screen.dart';
+import './screens/submit_feedback_screen.dart';
 
 void main() {
   runApp(
@@ -27,17 +28,17 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  Locale locale;
-  Questions questions;
+  Locale _locale;
+  Questions _questions;
 
+  //Initialises the language Provider and the language Locale from SharedPreferences. Rebuilds app when language is loaded async.
   @override
   void initState() {
     super.initState();
-
     SharedPreferencesHelper.getLanguageLocale().then((locale) {
       setState(() {
-        this.locale = locale;
-        questions = Questions(locale.languageCode);
+        this._locale = locale;
+        _questions = Questions(locale.languageCode);
       });
     });
   }
@@ -45,22 +46,24 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      //Changes Status bar color to Dark Purple
       statusBarColor: Colors.deepPurple.shade900,
     ));
-    SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
-    return this.locale == null
-        ? CircularProgressIndicator()
+    SystemChrome.setPreferredOrientations(
+        [DeviceOrientation.portraitUp]); //Lock app to Portrait
+    return this._locale == null
+        ? CircularProgressIndicator() //Progress indicator when language is not yet available
         : MultiProvider(
             providers: [
               ChangeNotifierProvider(
                 create: (_) =>
-                    Language.provider(code: this.locale.languageCode),
+                    Language.provider(code: this._locale.languageCode),
               ),
               ChangeNotifierProvider.value(
-                value: questions,
+                value: _questions,
               ),
               ChangeNotifierProxyProvider<Questions, Games>(
-                create: (_) => Games(questions),
+                create: (_) => Games(_questions),
                 update: (BuildContext context, Questions questions,
                     Games previous) =>
                     Games(questions),
@@ -106,8 +109,10 @@ class _MyAppState extends State<MyApp> {
                     HomeScreen.routeName: (ctx) => HomeScreen(),
                     GameScreen.routeName: (ctx) => GameScreen(),
                     EndOfGameScreen.routeName: (ctx) => EndOfGameScreen(),
+                    SubmitFeedbackScreen.routeName: (ctx) =>
+                        SubmitFeedbackScreen(),
                   },
-                  locale: this.locale,
+                  locale: this._locale,
                   localizationsDelegates: [
                     AppLocalizations.delegate,
                     GlobalMaterialLocalizations.delegate,

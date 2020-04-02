@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../helpers/screen_size_helper.dart';
 
+//Raised button with full width styling for use on app menus
 class MenuButton extends StatelessWidget {
   final Function buttonPressed;
   final String buttonText;

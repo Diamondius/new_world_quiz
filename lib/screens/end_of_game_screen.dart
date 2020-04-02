@@ -38,6 +38,7 @@ class EndOfGameScreen extends StatelessWidget {
     return WillPopScope(
       //To avoid having the game wipe bypassed by using the back button
       child: Scaffold(
+        resizeToAvoidBottomPadding: false,
         body: PageBackground(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

@@ -33,6 +33,14 @@ class _CustomGamePageState extends State<CustomGamePage> {
   }
 
   @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    _diff = AppLocalizations
+        .of(context)
+        .random;
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,

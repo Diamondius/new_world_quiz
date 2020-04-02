@@ -124,5 +124,209 @@
       "description": "Wrong questions answered",
       "type": "text",
       "placeholders": {}
-    }
+    },
+  "source": "Источник",
+  "@source": {
+    "description": "Source of a question found in Online Library",
+    "type": "text",
+    "placeholders": {}
+  },
+  "noSource": "Источника нету",
+  "@noSource": {
+    "description": "No source found for the specific question",
+    "type": "text",
+    "placeholders": {}
+  },
+  "cancel": "Отменить",
+  "@cancel": {
+    "description": "Cancel button to close Alert window",
+    "type": "text",
+    "placeholders": {}
+  },
+  "go": "Давай",
+  "@go": {
+    "description": "Go button on the alert window to move to the Watchtower library external site",
+    "type": "text",
+    "placeholders": {}
+  },
+  "sourceAlertWindowDescription": "Это откроет новое окно в Онлайн-Библиотеке Сторожевой башни, где находитса источник ответа.\n На странице можно поменять язык при помоши двух стрелок.\n Если ты решишь продолжить, ты потеряешь этот вопрос.",
+  "@sourceAlertWindowDescription": {
+    "description": "Description for the source alert window. \n Is a symbol for changing the line.",
+    "type": "text",
+    "placeholders": {}
+  },
+"custom": "Индивидуально",
+  "@custom": {
+    "description": "Custom Game Icon Text",
+    "type": "text",
+    "placeholders": {}
+  },
+  "customGame": "Индивидуальная игра",
+  "@customGame": {
+    "description": "Custom Game Title Text Text",
+    "type": "text",
+    "placeholders": {}
+  },
+  "play": "Играть",
+  "@play": {
+    "description": "Play Game",
+    "type": "text",
+    "placeholders": {}
+  },
+  "continueGame": "Продолжить",
+  "@continueGame": {
+    "description": "Continue Game",
+    "type": "text",
+    "placeholders": {}
+  },
+ "random": "Случайный",
+  "@random": {
+    "description": "Random difficulty of questions",
+    "type": "text",
+    "placeholders": {}
+  },
+  "easy": "Лёгкий",
+  "@easy": {
+    "description": "Easy difficulty of questions",
+    "type": "text",
+    "placeholders": {}
+  },
+  "normal": "Средний",
+  "@normal": {
+    "description": "Normal difficulty of questions",
+    "type": "text",
+    "placeholders": {}
+  },
+  "hard": "Сложный",
+  "@hard": {
+    "description": "Hard difficulty of questions",
+    "type": "text",
+    "placeholders": {}
+  },
+  "difficulty": "Уровень",
+  "@difficulty": {
+    "description": "How difficult the questions are",
+    "type": "text",
+    "placeholders": {}
+  },
+  "questions": "Вопросы",
+  "@questions": {
+    "description": "Questions",
+    "type": "text",
+    "placeholders": {}
+  },
+  "sound": "Звук",
+  "@sound": {
+     "description": "Option to enable or disable sounds",
+     "type": "text",
+     "placeholders": {}
+   },
+   "vibration": "Вибрация",
+   "@vibration": {
+     "description": "Option to enable or disable vibration",
+     "type": "text",
+     "placeholders": {}
+   },
+ "feedback": "Отклик",
+  "@feedback": {
+    "description": "Feedback from the user for the app",
+    "type": "text",
+    "placeholders": {}
+  },
+  "shareThoughts": "Поделись пожалуйста своими мыслями об игре.",
+  "@shareThoughts": {
+    "description": "Implores user to share their thoughts about the app",
+    "type": "text",
+    "placeholders": {}
+  },
+  "feedbackEmpty": "Напиши пожалуйста отзыв.",
+  "@feedbackEmpty": {
+    "description": "Message for when someone leaves the feedback textfield empty",
+    "type": "text",
+    "placeholders": {}
+  },
+  "feedbackFewChars": "Напиши пожалуйста больше чем 10 знаков.",
+  "@feedbackFewChars": {
+    "description": "Message for when someone writes under 10 characters in feedback",
+    "type": "text",
+    "placeholders": {}
+  },
+  "contact": "Контакт",
+  "@contact": {
+    "description": "Contact us title on settings page",
+    "type": "text",
+    "placeholders": {}
+  },
+  "shareQuestion": "Поделись своим вопросом",
+  "@shareQuestion": {
+    "description": "Share a question on settings page",
+    "type": "text",
+    "placeholders": {}
+  },
+  "reportQuestion": "Сообщить о вопросе",
+  "@reportQuestion": {
+    "description": "Report question title on the page",
+    "type": "text",
+    "placeholders": {}
+  },
+  "newQuestion": "Новы вопрос",
+  "@newQuestion": {
+    "description": "Report question title on the page",
+    "type": "text",
+    "placeholders": {}
+  },
+  "reportQuestionUnderline": "Напиши пожалуйста, что с этим вопросом не так.",
+  "@reportQuestionUnderline": {
+    "description": "Ask them to share the issue with the question",
+    "type": "text",
+    "placeholders": {}
+  },
+  "shareQuestionUnderline": "Пожалуйста поделись своим вопросом.",
+  "@shareQuestionUnderline": {
+    "description": "Ask them to share a question under the title",
+    "type": "text",
+    "placeholders": {}
+  },
+  "question": "Вопрос",
+  "@question": {
+    "description": "Single question for the new question form hint",
+    "type": "text",
+    "placeholders": {}
+  },
+  "correctAnswer": "Правильны ответ",
+  "@correctAnswer": {
+    "description": "Correct answer for the new question form hint",
+    "type": "text",
+    "placeholders": {}
+  },
+  "wrongAnswer": "Неправильны ответ",
+  "@wrongAnswer": {
+    "description": "Wrong answer for the new question form hint",
+    "type": "text",
+    "placeholders": {}
+  },
+  "emptyQuestionError": "Пожалуйста напиши вопрос!",
+  "@emptyQuestionError": {
+    "description": "Error you see when the question form is empty",
+    "type": "text",
+    "placeholders": {}
+  },
+  "emptyAnswerError": "Пожалуйста напиши ответ!",
+  "@emptyAnswerError": {
+    "description": "Error you see when the answer form is empty",
+    "type": "text",
+    "placeholders": {}
+  },
+  "shortQuestionError": "Пожалуйста сделай вопрос длиннее!",
+  "@shortQuestionError": {
+    "description": "Error you see when the question form has too few characters",
+    "type": "text",
+    "placeholders": {}
+  },
+  "longAnswerError": "Пожалуйста сократи ответ на меньше чем 100 знаков.",
+  "@longAnswerError": {
+    "description": "Error you see when the answer form is too long",
+    "type": "text",
+    "placeholders": {}
+  }
 }

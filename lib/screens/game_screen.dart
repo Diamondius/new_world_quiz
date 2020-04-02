@@ -3,8 +3,9 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:new_world_quiz/providers/settings.dart';
+import 'package:new_world_quiz/widgets/single_touch_recognizer_widget.dart';
 import 'package:provider/provider.dart';
-import 'package:vibrate/vibrate.dart';
+import 'package:vibration/vibration.dart';
 
 import '../helpers/screen_size_helper.dart';
 import '../locale/app_localization.dart';
@@ -26,94 +27,95 @@ class GameScreen extends StatefulWidget {
 }
 
 class _GameScreenState extends State<GameScreen> {
-  List<Question> _questionList = [];
-  Game game;
-  Games games;
-  String question = "Loading";
-  String uploader = "Loading";
-  String source = "Loading";
-  String correctAnswer;
-  List<String> buttonText = ["Loading", "Loading", "Loading", "Loading"];
-  List<Color> buttonColors = [];
-  bool allowReset = true;
-  bool sounds = true;
-  bool vibrate = true;
+  List<Question> _questionList = []; //List of question objects
+  Game _game; //Game object
+  Games _games; //Games provider object
+  String _question = "Loading";
+  String _uploader = "Loading";
+  String _source = "Loading";
+  String _correctAnswer;
+  List<String> _buttonText = ["Loading", "Loading", "Loading", "Loading"];
+  List<Color> _buttonColors = [];
+  bool _allowReset = true;
+  bool _sounds = true;
+  bool _vibrate = true;
 
   void buttonPressed(String answeredText, int id) {
     setState(() {
-      allowReset = false;
-      for (int i = 0; i < buttonText.length; i++) {
-        if (buttonText[i] == correctAnswer) {
-          buttonColors[i] = Colors.green;
-        }
-        if (answeredText != correctAnswer) {
-          buttonColors[id] = Colors.red;
-        }
+      _allowReset = false; //stop button changes on rebuild
+      for (int i = 0; i < _buttonText.length; i++) {
+        //Change correct answer to green and if wrong pressed to red
+        if (_buttonText[i] == _correctAnswer) _buttonColors[i] = Colors.green;
+        if (answeredText != _correctAnswer) _buttonColors[id] = Colors.red;
       }
     });
-    if (game.getRoundNumber != game.getNumberOfQuestions) {
+    if (_game.getRoundNumber != _game.getNumberOfQuestions) {
+      //If game not finished
       Future.delayed(Duration(seconds: 1)).then((_) {
-        allowReset = true;
-        games.increaseRound();
-        if (answeredText == correctAnswer) {
-          if (sounds) playLocalAsset("sounds/correct.mp3");
-          game.answeredCorrectly(
-              _questionList[game.getCurrentQuestionId].difficulty);
+        _allowReset = true; //allow buttons to rebuild
+        _games.increaseRound(); //next round
+        if (answeredText == _correctAnswer) {
+          //if answer was correct play sound and  give points
+          if (_sounds) playLocalAsset("sounds/correct.mp3");
+          _game.answeredCorrectly(
+              _questionList[_game.getCurrentQuestionId].difficulty);
         } else {
-          if (sounds) playLocalAsset("sounds/wrong.mp3");
-          if (vibrate) Vibrate.vibrate();
+          //if wrong vibrate and play the wrong sound
+          if (_sounds) playLocalAsset("sounds/wrong.mp3");
+          if (_vibrate) Vibration.vibrate();
         }
-        if (game.roundNumber < game.numberOfQuestions) {
-          games.saveCurrentGame();
+        if (_game.roundNumber < _game.numberOfQuestions) {
+          //if game is not ended save it
+          _games.saveCurrentGame();
         }
       });
     } else {
+      //if game is ended go to the end of game screen
       Navigator.of(context).pushReplacementNamed(EndOfGameScreen.routeName);
     }
   }
 
   //AudioPlayer for correct and wrong sounds
   Future<AudioPlayer> playLocalAsset(String soundFile) async {
-    if (sounds) {
+    if (_sounds) {
       AudioCache cache = new AudioCache();
       return await cache.play(soundFile);
     }
     return null;
   }
 
+  //Loads questions list for the selected language and settings on init
   @override
   void initState() {
     super.initState();
     _questionList = Provider.of<Questions>(context, listen: false).getQuestions;
     var settings = Provider.of<Settings>(context, listen: false);
-    sounds = settings.getSoundSetting;
-    vibrate = settings.getVibrationSetting;
+    _sounds = settings.getSoundSetting;
+    _vibrate = settings.getVibrationSetting;
   }
 
   @override
   Widget build(BuildContext context) {
-    games = Provider.of<Games>(context);
-    game = games.getGame;
-    if (allowReset) {
-      int currentQuestionId = game.getCurrentQuestionId;
-      buttonText = [
+    _games = Provider.of<Games>(context);
+    _game = _games.getGame;
+    if (_allowReset) {
+      //Resets button color and text when the tree rebuilds (on games provider notify listeners)
+      int currentQuestionId = _game.getCurrentQuestionId;
+      _buttonText = [
+        //Fills button list with current answers
         _questionList[currentQuestionId].correctAnswer,
         _questionList[currentQuestionId].wrongAnswer1,
         _questionList[currentQuestionId].wrongAnswer2,
         _questionList[currentQuestionId].wrongAnswer3,
       ];
-      buttonText.shuffle();
-      question = _questionList[currentQuestionId].question;
-      correctAnswer = _questionList[currentQuestionId].correctAnswer;
-      uploader = _questionList[currentQuestionId].uploader;
-      source = _questionList[currentQuestionId].source;
-      print(
-          "Id: ${currentQuestionId
-              .toString()} Difficulty:${_questionList[currentQuestionId]
-              .difficulty
-              .toString()} Secondary id: ${_questionList[currentQuestionId]
-              .id}");
-      buttonColors = [
+      _buttonText
+          .shuffle(); // Shuffles the current list so answers on buttons can be randomised
+      _question = _questionList[currentQuestionId].question;
+      _correctAnswer = _questionList[currentQuestionId].correctAnswer;
+      _uploader = _questionList[currentQuestionId].uploader;
+      _source = _questionList[currentQuestionId].source;
+      _buttonColors = [
+        //Resets button colors to default
         Theme.of(context).primaryColor,
         Theme.of(context).primaryColor,
         Theme.of(context).primaryColor,
@@ -121,12 +123,15 @@ class _GameScreenState extends State<GameScreen> {
       ];
     }
     return Scaffold(
+      resizeToAvoidBottomPadding: false,
       appBar: PreferredSize(
+        //Custom appbar with set size
         preferredSize: Size(
           double.infinity,
           screenHeight(context, dividedBy: 13),
         ),
         child: Container(
+          //Container to color the appbar and move it under the notification bar
           color: Theme
               .of(context)
               .primaryColorDark,
@@ -135,16 +140,20 @@ class _GameScreenState extends State<GameScreen> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              GameInfoButton(uploader, source),
-              GameStats(AppLocalizations
-                  .of(context)
-                  .correct,
-                  game.getNumberOfCorrectAnswers),
+              GameInfoButton(_uploader,
+                  _source),
+              //Button that opens a list with info about the question
+              GameStats(
+                  AppLocalizations
+                      .of(context)
+                      .correct, //Correct and wrong Stats strip
+                  _game.getNumberOfCorrectAnswers),
               GameStats(AppLocalizations
                   .of(context)
                   .wrong,
-                  game.getNumberOfWrongAnswers),
+                  _game.getNumberOfWrongAnswers),
               IconButton(
+                //Button that exits the game if pressed
                 icon: Icon(
                   Icons.exit_to_app,
                   color: Theme
@@ -170,11 +179,11 @@ class _GameScreenState extends State<GameScreen> {
                   padding: const EdgeInsets.all(0),
                   width: double.infinity,
                   height: screenHeight(context, dividedBy: 3),
-                  child: AutoSizeText(question,
+                  child: AutoSizeText(_question,
                       style: Theme
                           .of(context)
                           .textTheme
-                          .overline,
+                          .body1,
                       textAlign: TextAlign.center),
                   alignment: Alignment.topCenter,
                 ),
@@ -190,42 +199,46 @@ class _GameScreenState extends State<GameScreen> {
                   const Radius.circular(5),
                 ),
               ),
-              child: AbsorbPointer(
-                absorbing: !allowReset,
-                child: Column(
-                  children: <Widget>[
-                    answerFlatButton(
-                      buttonText[0],
-                      buttonColors[0],
-                          () {
-                        buttonPressed(buttonText[0], 0);
-                      },
-                    ),
-                    DividerQuestionButton(),
-                    answerFlatButton(
-                      buttonText[1],
-                      buttonColors[1],
-                          () {
-                        buttonPressed(buttonText[1], 1);
-                      },
-                    ),
-                    DividerQuestionButton(),
-                    answerFlatButton(
-                      buttonText[2],
-                      buttonColors[2],
-                          () {
-                        buttonPressed(buttonText[2], 2);
-                      },
-                    ),
-                    DividerQuestionButton(),
-                    answerFlatButton(
-                      buttonText[3],
-                      buttonColors[3],
-                          () {
-                        buttonPressed(buttonText[3], 3);
-                      },
-                    ),
-                  ],
+              child: SingleTouchRecognizerWidget(
+                //So Emil does not doubleClick the answers
+                child: AbsorbPointer(
+                  //Forbids clicks on the answer buttons after one is pressed
+                  absorbing: !_allowReset,
+                  child: Column(
+                    children: <Widget>[
+                      answerFlatButton(
+                        _buttonText[0],
+                        _buttonColors[0],
+                            () {
+                          buttonPressed(_buttonText[0], 0);
+                        },
+                      ),
+                      DividerQuestionButton(), //Divider between lines
+                      answerFlatButton(
+                        _buttonText[1],
+                        _buttonColors[1],
+                            () {
+                          buttonPressed(_buttonText[1], 1);
+                        },
+                      ),
+                      DividerQuestionButton(),
+                      answerFlatButton(
+                        _buttonText[2],
+                        _buttonColors[2],
+                            () {
+                          buttonPressed(_buttonText[2], 2);
+                        },
+                      ),
+                      DividerQuestionButton(),
+                      answerFlatButton(
+                        _buttonText[3],
+                        _buttonColors[3],
+                            () {
+                          buttonPressed(_buttonText[3], 3);
+                        },
+                      ),
+                    ],
+                  ),
                 ),
               ),
             )
@@ -235,6 +248,7 @@ class _GameScreenState extends State<GameScreen> {
     );
   }
 
+  //One of the 4 answer buttons to avoid code duplication
   Container answerFlatButton(String text, Color color, Function onPressed) {
     return Container(
       decoration: BoxDecoration(color: color),

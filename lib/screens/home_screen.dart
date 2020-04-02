@@ -18,7 +18,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedPageIndex = 0; //Page selected index
-  List<Widget> pages = [
+  List<Widget> _pages = [
     WelcomePage(),
     CustomGamePage(),
     SettingsPage(),
@@ -30,12 +30,41 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
+  //Changes the pages also with drag
+  void _onHorizontalDrag(DragEndDetails details) {
+    if (details.primaryVelocity == 0)
+      return; // user have just tapped on screen (no dragging)
+    if (details.primaryVelocity.compareTo(0) == -1) {
+      if (_selectedPageIndex == _pages.length - 1)
+        return;
+      else {
+        setState(() {
+          _selectedPageIndex++;
+        });
+      }
+    } else {
+      if (_selectedPageIndex == 0)
+        return;
+      else {
+        setState(() {
+          _selectedPageIndex--;
+        });
+      }
+    }
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomPadding: false,
       /*  appBar: _selectedPageIndex == 1 ? AppBar() : null,*/
       //Shared Background and measurements
-      body: PageBackground(
-        child: pages[_selectedPageIndex],
+      body: GestureDetector(
+        //To change the pages with dragging
+        onHorizontalDragEnd: (DragEndDetails details) =>
+            _onHorizontalDrag(details),
+        child: PageBackground(
+          child: _pages[_selectedPageIndex],
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Theme

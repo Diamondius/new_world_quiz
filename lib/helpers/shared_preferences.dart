@@ -86,4 +86,20 @@ class SharedPreferencesHelper {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     return prefs.setBool("vibration", vibration);
   }
+
+  static Future<String> getVersion() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    if (prefs.containsKey("version")) {
+      return prefs.getString("version");
+    } else {
+      String tempVersion = "0.0.1";
+      await setVersion(tempVersion);
+      return tempVersion;
+    }
+  }
+
+  static Future<bool> setVersion(String version) async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    return prefs.setString("version", version);
+  }
 }
