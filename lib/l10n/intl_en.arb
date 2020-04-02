@@ -1,0 +1,332 @@
+{
+  "nwQuiz": "NEW WORLD QUIZ",
+  "@nwQuiz": {
+    "description": "The title for the app",
+    "type": "text",
+    "placeholders": {}
+  },
+  "welcomeTo": "WELCOME TO",
+  "@welcomeTo": {
+    "description": "Title overhead welcome",
+    "type": "text",
+    "placeholders": {}
+  },
+  "exclamationPerfect": "PERFECT!",
+  "@exclamationPerfect": {
+    "description": "End Game Title for a perfect Score",
+    "type": "text",
+    "placeholders": {}
+  },
+  "exclamationGreat": "GREAT JOB!",
+  "@exclamationGreat": {
+    "description": "End Game Title for a great score",
+    "type": "text",
+    "placeholders": {}
+  },
+  "exclamationGood": "GOOD JOB!",
+  "@exclamationGood": {
+    "description": "End Game Title for a good score",
+    "type": "text",
+    "placeholders": {}
+  },
+  "exclamationThank": "NICE TRY!",
+  "@exclamationThank": {
+    "description": "End Game Title for a low score",
+    "type": "text",
+    "placeholders": {}
+  },
+  "evaluationPerfect": "You have reached the heights of Biblical knowledge. Put it to good use!",
+  "@evaluationPerfect": {
+    "description": "End Game evaluation for a perfect score",
+    "type": "text",
+    "placeholders": {}
+  },
+  "evaluationGreat": "You have an in depth knowledge of the Bible. Continue your hard work!",
+  "@evaluationGreat": {
+    "description": "End Game evaluation for a great score",
+    "type": "text",
+    "placeholders": {}
+  },
+  "evaluationGood": "You have demonstrated a working knowledge of the Bible. Always keep improving!",
+  "@evaluationGood": {
+    "description": "End Game evaluation for a good score",
+    "type": "text",
+    "placeholders": {}
+  },
+  "evaluationThank": "Gaining Biblical knowledge is a life long journey, never give up!",
+  "@evaluationThank": {
+    "description": "End Game evaluation for a lower than half score",
+    "type": "text",
+    "placeholders": {}
+  },
+  "buttonEndGame": "End Game",
+  "@buttonEndGame": {
+    "description": "End Game button text",
+    "type": "text",
+    "placeholders": {}
+  },
+  "inDepth": "More in depth",
+  "@inDepth": {
+    "description": "End Game In Depth title",
+    "type": "text",
+    "placeholders": {}
+  },
+  "correctAnswers": "Correct Answers",
+  "@correctAnswers": {
+    "description": "End Game correct answers",
+    "type": "text",
+    "placeholders": {}
+  },
+  "totalPoints": "Total Points",
+  "@totalPoints": {
+    "description": "End Game total points",
+    "type": "text",
+    "placeholders": {}
+  },
+  "settings": "Settings",
+  "@settings": {
+    "description": "Settings Title",
+    "type": "text",
+    "placeholders": {}
+  },
+  "quickGameButton": "Quick Game",
+  "@quickGameButton": {
+    "description": "Quick Game Button Title",
+    "type": "text",
+    "placeholders": {}
+  },
+  "home": "Home",
+  "@home": {
+    "description": "Central app page on navigation bar",
+    "type": "text",
+    "placeholders": {}
+  },
+  "language": "Language",
+  "@language": {
+    "description": "Settings language",
+    "type": "text",
+    "placeholders": {}
+  },
+  "by": "By",
+  "@by": {
+    "description": "By whom was the question uploaded",
+    "type": "text",
+    "placeholders": {}
+  },
+  "correct": "Correct",
+   "@correct": {
+     "description": "Correct questions answered",
+     "type": "text",
+     "placeholders": {}
+   },
+  "wrong": "Wrong",
+   "@wrong": {
+     "description": "Wrong questions answered",
+     "type": "text",
+     "placeholders": {}
+   },
+  "source": "Source",
+  "@source": {
+    "description": "Source of a question found in Online Library",
+    "type": "text",
+    "placeholders": {}
+  },
+  "noSource": "No Source",
+  "@noSource": {
+    "description": "No source found for the specific question",
+    "type": "text",
+    "placeholders": {}
+  },
+  "cancel": "Cancel",
+  "@cancel": {
+    "description": "Cancel button to close Alert window",
+    "type": "text",
+    "placeholders": {}
+  },
+  "go": "Go",
+  "@go": {
+    "description": "Go button on the alert window to move to the Watchtower library external site",
+    "type": "text",
+    "placeholders": {}
+  },
+  "sourceAlertWindowDescription": "This will open an external browser window to the Watchtower Online Library, where the source of the question is referred.\n The site's double arrow icon can be used to change languages.\n If you choose to proceed, you forfeit this question.",
+  "@sourceAlertWindowDescription": {
+    "description": "Description for the source alert window. \n Is a symbol for changing the line.",
+    "type": "text",
+    "placeholders": {}
+  },
+  "custom": "Custom",
+  "@custom": {
+    "description": "Custom Game Icon Text",
+    "type": "text",
+    "placeholders": {}
+  },
+  "customGame": "Custom Game",
+  "@customGame": {
+    "description": "Custom Game Title Text Text",
+    "type": "text",
+    "placeholders": {}
+  },
+  "play": "Play",
+  "@play": {
+    "description": "Play Game",
+    "type": "text",
+    "placeholders": {}
+  },
+  "continueGame": "Continue",
+  "@continueGame": {
+    "description": "Continue Game",
+    "type": "text",
+    "placeholders": {}
+  },
+  "random": "Random",
+  "@random": {
+    "description": "Random difficulty of questions",
+    "type": "text",
+    "placeholders": {}
+  },
+  "easy": "Easy",
+  "@easy": {
+    "description": "Easy difficulty of questions",
+    "type": "text",
+    "placeholders": {}
+  },
+  "normal": "Normal",
+  "@normal": {
+    "description": "Normal difficulty of questions",
+    "type": "text",
+    "placeholders": {}
+  },
+  "hard": "Hard",
+  "@hard": {
+    "description": "Hard difficulty of questions",
+    "type": "text",
+    "placeholders": {}
+  },
+  "difficulty": "Difficulty",
+  "@difficulty": {
+    "description": "How difficult the questions are",
+    "type": "text",
+    "placeholders": {}
+  },
+  "questions": "Questions",
+  "@questions": {
+    "description": "Questions",
+    "type": "text",
+    "placeholders": {}
+  },
+  "sound": "Sound",
+  "@sound": {
+    "description": "Option to enable or disable sounds",
+    "type": "text",
+    "placeholders": {}
+  },
+  "vibration": "Vibration",
+  "@vibration": {
+    "description": "Option to enable or disable vibration",
+    "type": "text",
+    "placeholders": {}
+  },
+  "feedback": "Feedback",
+  "@feedback": {
+    "description": "Feedback from the user for the app",
+    "type": "text",
+    "placeholders": {}
+  },
+  "shareThoughts": "Please share your thoughts about the app",
+  "@shareThoughts": {
+    "description": "Implores user to share their thoughts about the app",
+    "type": "text",
+    "placeholders": {}
+  },
+  "feedbackEmpty": "Please write some feedback before sending",
+  "@feedbackEmpty": {
+    "description": "Message for when someone leaves the feedback textfield empty",
+    "type": "text",
+    "placeholders": {}
+  },
+  "feedbackFewChars": "Please write more than 10 characters",
+  "@feedbackFewChars": {
+    "description": "Message for when someone writes under 10 characters in feedback",
+    "type": "text",
+    "placeholders": {}
+  },
+  "contact": "Contact Us",
+  "@contact": {
+    "description": "Contact us title on settings page",
+    "type": "text",
+    "placeholders": {}
+  },
+  "shareQuestion": "Share your Question",
+  "@shareQuestion": {
+    "description": "Share a question on settings page",
+    "type": "text",
+    "placeholders": {}
+  },
+  "reportQuestion": "Report Question",
+  "@reportQuestion": {
+    "description": "Report question title on the page",
+    "type": "text",
+    "placeholders": {}
+  },
+  "newQuestion": "New Question",
+  "@newQuestion": {
+    "description": "Report question title on the page",
+    "type": "text",
+    "placeholders": {}
+  },
+  "reportQuestionUnderline": "Please share what is wrong with this question",
+  "@reportQuestionUnderline": {
+    "description": "Ask them to share the issue with the question",
+    "type": "text",
+    "placeholders": {}
+  },
+  "shareQuestionUnderline": "Please share a question with us",
+  "@shareQuestionUnderline": {
+    "description": "Ask them to share a question under the title",
+    "type": "text",
+    "placeholders": {}
+  },
+  "question": "Question",
+  "@question": {
+    "description": "Single question for the new question form hint",
+    "type": "text",
+    "placeholders": {}
+  },
+  "correctAnswer": "Correct Answer",
+  "@correctAnswer": {
+    "description": "Correct answer for the new question form hint",
+    "type": "text",
+    "placeholders": {}
+  },
+  "wrongAnswer": "Wrong Answer",
+  "@wrongAnswer": {
+    "description": "Wrong answer for the new question form hint",
+    "type": "text",
+    "placeholders": {}
+  },
+  "emptyQuestionError": "Please write a question!",
+  "@emptyQuestionError": {
+    "description": "Error you see when the question form is empty",
+    "type": "text",
+    "placeholders": {}
+  },
+  "emptyAnswerError": "Please write an answer!",
+  "@emptyAnswerError": {
+    "description": "Error you see when the answer form is empty",
+    "type": "text",
+    "placeholders": {}
+  },
+  "shortQuestionError": "Please make the question longer!",
+  "@shortQuestionError": {
+    "description": "Error you see when the question form has too few characters",
+    "type": "text",
+    "placeholders": {}
+  },
+  "longAnswerError": "Shorten the answer to fewer than X characters",
+  "@longAnswerError": {
+    "description": "Error you see when the answer form is too long",
+    "type": "text",
+    "placeholders": {}
+  }
+}
