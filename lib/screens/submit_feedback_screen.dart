@@ -54,7 +54,7 @@ class _SubmitFeedbackScreenState extends State<SubmitFeedbackScreen> {
     _form.currentState.save(); //Saving all fields
     if (_form.currentState.validate()) {
       //If all fields are validated the rest are sent
-      String toMailId = "jwquizmobile@gmail.com";
+      String toMailId = "";
       String subject = "Feedback";
       String body = _submitText;
       if (fb == userForms.errorQuestion) {

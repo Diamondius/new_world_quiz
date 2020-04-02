@@ -20,10 +20,7 @@ double screenHeightExcludingToolbar(BuildContext context,
 }
 
 double screenHeightToolbar(BuildContext context, {double increasedBy = 0.0}) {
-  return MediaQuery
-      .of(context)
-      .padding
-      .top + increasedBy;
+  return MediaQuery.of(context).padding.top + increasedBy;
 }
 
 double statusBarHeight(BuildContext context) {
