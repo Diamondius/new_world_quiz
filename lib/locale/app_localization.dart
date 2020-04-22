@@ -44,7 +44,7 @@ class AppLocalizations {
 
   String get welcomeTo {
     return Intl.message(
-      "WELCOME TO",
+      "Welcome to",
       name: "welcomeTo",
       desc: "Title overhead welcome",
     );
@@ -473,6 +473,246 @@ class AppLocalizations {
       "Shorten the answer to fewer than 100 characters!",
       name: "longAnswerError",
       desc: "Error you see when the answer form is too long",
+    );
+  }
+
+  String get signIn {
+    return Intl.message(
+      "Sign In",
+      name: "signIn",
+      desc: "Sign in page icon text",
+    );
+  }
+
+  String get signUp {
+    return Intl.message(
+      "Sign Up",
+      name: "signUp",
+      desc: "Sign up page icon text",
+    );
+  }
+
+  String get signOut {
+    return Intl.message(
+      "Logout",
+      name: "signOut",
+      desc: "Sign out page icon text",
+    );
+  }
+
+  String get user {
+    return Intl.message(
+      "User",
+      name: "user",
+      desc: "User page icon text",
+    );
+  }
+
+  String get withEmail {
+    return Intl.message(
+      "with E-Mail",
+      name: "withEmail",
+      desc: "Sign in with Email",
+    );
+  }
+
+  String get offline {
+    return Intl.message(
+      "Offline",
+      name: "offline",
+      desc: "Play without internet(offline)",
+    );
+  }
+
+  String get or {
+    return Intl.message(
+      "or",
+      name: "or",
+      desc: "Something OR another",
+    );
+  }
+
+  get password {
+    return Intl.message(
+      "Password",
+      name: "password",
+      desc: "Password",
+    );
+  }
+
+  String get email {
+    return Intl.message(
+      "E-Mail",
+      name: "email",
+      desc: "E-Mail",
+    );
+  }
+
+  String get userName {
+    return Intl.message(
+      "Username",
+      name: "userName",
+      desc: "User Name",
+    );
+  }
+
+  String get userNameFewChars {
+    return Intl.message(
+      "Username must be longer than 4 letters",
+      name: "userNameFewChars",
+      desc: "User Name too few characters",
+    );
+  }
+
+  String get invalidEmailOrPassword {
+    return Intl.message(
+      "Invalid E-Mail or Password",
+      name: "invalidEmailOrPassword",
+      desc: "Invalid Email or Password",
+    );
+  }
+
+  String get withGoogle {
+    return Intl.message(
+      "with Google",
+      name: "withGoogle",
+      desc: "Sign in with Google",
+    );
+  }
+
+  String get onFacebook {
+    return Intl.message(
+      "with Facebook",
+      name: "onFacebook",
+      desc: "Sign in on Facebook",
+    );
+  }
+
+  String get weakPassword {
+    return Intl.message(
+      "Your password is too weak",
+      name: "weakPassword",
+      desc: "Your password is too weak",
+    );
+  }
+
+  String get invalidEmail {
+    return Intl.message(
+      "Your email is invalid",
+      name: "invalidEmail",
+      desc: "Your email is invalid",
+    );
+  }
+
+  String get emailInUse {
+    return Intl.message(
+      "Email is already in use on a different account",
+      name: "emailInUse",
+      desc: "Email is already in use on different account",
+    );
+  }
+
+  String get invalidPassword {
+    return Intl.message(
+      "You entered a wrong password",
+      name: "invalidPassword",
+      desc: "You entered a wrong password",
+    );
+  }
+
+  String get userDisabled {
+    return Intl.message(
+      "This user account has been disabled",
+      name: "userDisabled",
+      desc: "This user account has been disabled",
+    );
+  }
+
+  String get tooManyAttemptsToSignIn {
+    return Intl.message(
+      "Too many attempts to sign in as this user",
+      name: "tooManyAttemptsToSignIn",
+      desc: "Too many attempts to sign in as this user",
+    );
+  }
+
+  String get invalidCredentials {
+    return Intl.message(
+      "Your login credentials are invalid",
+      name: "invalidCredentials",
+      desc: "Your login credentials are invalid",
+    );
+  }
+
+  String get userNotFound {
+    return Intl.message(
+      "This user does not exist",
+      name: "userNotFound",
+      desc: "This user does not exist",
+    );
+  }
+
+  String get errorVerification {
+    return Intl.message(
+      "An error occurred while trying to send the verification E-Mail",
+      name: "errorVerification",
+      desc: "An error occured while trying to send verification E-Mail",
+    );
+  }
+
+  String get resetPassword {
+    return Intl.message(
+      "Reset password",
+      name: "resetPassword",
+      desc: "Reset password",
+    );
+  }
+
+  String get forgotPassword {
+    return Intl.message(
+      "Forgot your password?",
+      name: "forgotPassword",
+      desc: "forgotPassword",
+    );
+  }
+
+  String get resetEmailSent {
+    return Intl.message(
+      "Reset password E-Mail sent",
+      name: "resetEmailSent",
+      desc: "Reset password E-Mail sent",
+    );
+  }
+
+  String get unidentifiedError {
+    return Intl.message(
+      "An undefined Error happened",
+      name: "unidentifiedError",
+      desc: "An undefined Error happened",
+    );
+  }
+
+  String get networkError {
+    return Intl.message(
+      "You are not connected to the Internet",
+      name: "networkError",
+      desc: "Network Error",
+    );
+  }
+
+  String get facebookError {
+    return Intl.message(
+      "Facebook Error",
+      name: "facebookError",
+      desc: "Facebook Error",
+    );
+  }
+
+  String get canceledByUser {
+    return Intl.message(
+      "Login cancelled by user",
+      name: "canceledByUser",
+      desc: "Login cancelled by user",
     );
   }
 }

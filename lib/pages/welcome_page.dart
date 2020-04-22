@@ -1,8 +1,9 @@
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:new_world_quiz/models/user.dart';
 import 'package:new_world_quiz/providers/games.dart';
 import 'package:new_world_quiz/screens/game_screen.dart';
 import 'package:new_world_quiz/widgets/menu_button.dart';
+import 'package:new_world_quiz/widgets/overline_autotext.dart';
 import 'package:provider/provider.dart';
 
 import '../helpers/screen_size_helper.dart';
@@ -16,25 +17,24 @@ class WelcomePage extends StatelessWidget {
       children: <Widget>[
         Column(
           children: <Widget>[
-            Container(
-              height: screenHeight(context, dividedBy: 28),
-              width: double.infinity,
-              alignment: Alignment.bottomCenter,
-              child: AutoSizeText(
-                AppLocalizations.of(context).welcomeTo,
-                style: Theme.of(context).textTheme.overline,
-                textAlign: TextAlign.center,
-                textScaleFactor: 1.5,
-              ),
-            ),
+            OverLineAutoText(AppLocalizations
+                .of(context)
+                .welcomeTo),
             Container(
               height: screenHeight(context, dividedBy: 6),
               width: screenWidth(context, dividedBy: 1.05),
+              padding: EdgeInsets.only(
+                bottom: screenHeight(context, dividedBy: 80),
+              ),
               child: Image.asset(
                 "assets/images/title.png",
                 fit: BoxFit.contain,
               ),
             ),
+            OverLineAutoText(
+                Provider
+                    .of<User>(context, listen: false)
+                    .userName),
           ],
         ),
         MenuButton(

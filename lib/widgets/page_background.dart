@@ -10,13 +10,16 @@ class PageBackground extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        padding: EdgeInsets.symmetric(
-          horizontal: screenWidth(context, dividedBy: 18),
-          vertical: screenHeight(context, dividedBy: 40),
-        ),
-        margin: EdgeInsets.only(top: statusBarHeight(context)),
-        decoration: BackgroundGradient(),
-        child: child);
+    return SafeArea(
+      child: Container(
+          width: double.infinity,
+          height: double.infinity,
+          padding: EdgeInsets.symmetric(
+            horizontal: screenWidth(context, dividedBy: 18),
+            vertical: screenHeight(context, dividedBy: 40),
+          ),
+          decoration: BackgroundGradient(),
+          child: child),
+    );
   }
 }

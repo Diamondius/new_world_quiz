@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
-import 'package:new_world_quiz/helpers/database_helper.dart';
 import 'package:sqflite/sqflite.dart';
 
+import '../helpers/database_helper.dart';
 import '../models/question.dart';
 
 class Questions with ChangeNotifier {

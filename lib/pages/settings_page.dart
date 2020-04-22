@@ -2,6 +2,8 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:new_world_quiz/providers/language.dart';
+import 'package:new_world_quiz/widgets/menu_button_flat.dart';
+import 'package:new_world_quiz/widgets/title_autotext.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -47,12 +49,9 @@ class SettingsPage extends StatelessWidget {
       child: SingleChildScrollView(
         child: Column(
           children: [
-            AutoSizeText(
-              AppLocalizations.of(context).settings,
-              style: Theme.of(context).textTheme.title,
-              textAlign: TextAlign.center,
-              maxLines: 1,
-            ),
+            TitleAutoText(AppLocalizations
+                .of(context)
+                .settings),
             LanguagePicker(),
             SettingsSoundCheckBox(),
             SettingsVibrationCheckBox(),
@@ -91,40 +90,29 @@ class SettingsPage extends StatelessWidget {
                 ],
               ),
             ),
-            Container(
-              width: double.infinity,
-              margin: const EdgeInsets.symmetric(vertical: 8),
-              height: screenHeight(context, dividedBy: 14),
-              child: FlatButton(
-                child: AutoSizeText(
-                  AppLocalizations.of(context).shareQuestion,
-                  style: Theme.of(context).textTheme.button,
-                  textAlign: TextAlign.center,
-                ),
-                color: Theme.of(context).primaryColor,
-                onPressed: () {
-                  Navigator.of(context).pushNamed(
-                      SubmitFeedbackScreen.routeName,
-                      arguments: userForms.newQuestion);
-                },
-              ),
+            MenuButtonFlat(
+              text: AppLocalizations
+                  .of(context)
+                  .shareQuestion,
+              isDark: false,
+              onPressed: () {
+                Navigator.of(context).pushNamed(SubmitFeedbackScreen.routeName,
+                    arguments: userForms.newQuestion);
+              },
             ),
-            Container(
+            SizedBox(
+              height: 8.0,
               width: double.infinity,
-              height: screenHeight(context, dividedBy: 14),
-              child: FlatButton(
-                child: AutoSizeText(
-                  AppLocalizations.of(context).feedback,
-                  style: Theme.of(context).textTheme.button,
-                  textAlign: TextAlign.center,
-                ),
-                color: Theme.of(context).primaryColorDark,
-                onPressed: () {
-                  Navigator.of(context).pushNamed(
-                      SubmitFeedbackScreen.routeName,
-                      arguments: userForms.feedback);
-                },
-              ),
+            ),
+            MenuButtonFlat(
+              text: AppLocalizations
+                  .of(context)
+                  .feedback,
+              isDark: true,
+              onPressed: () {
+                Navigator.of(context).pushNamed(SubmitFeedbackScreen.routeName,
+                    arguments: userForms.feedback);
+              },
             ),
           ],
         ),

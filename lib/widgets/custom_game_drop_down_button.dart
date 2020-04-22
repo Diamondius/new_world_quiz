@@ -43,7 +43,7 @@ class _CustomGameDropDownButtonState extends State<CustomGameDropDownButton> {
     ];
 
     return Container(
-      width: screenWidth(context, dividedBy: 4, reducedBy: -50),
+      width: screenWidth(context, dividedBy: 3.5),
       alignment: Alignment.centerRight,
       child: DropdownButton(
         isExpanded: true,
@@ -60,8 +60,7 @@ class _CustomGameDropDownButtonState extends State<CustomGameDropDownButton> {
                 .map(
                   (String diff) => DropdownMenuItem(
                     value: diff,
-                    child: FittedBox(
-                      fit: BoxFit.contain,
+            child: Center(
                       child: AutoSizeText(
                         diff,
                         style: Theme.of(context).textTheme.body2,
@@ -74,8 +73,7 @@ class _CustomGameDropDownButtonState extends State<CustomGameDropDownButton> {
                 .map(
                   (int number) => DropdownMenuItem(
                     value: number,
-                    child: FittedBox(
-                      fit: BoxFit.contain,
+            child: Center(
                       child: AutoSizeText(number.toString(),
                           style: Theme.of(context).textTheme.body2),
                     ),

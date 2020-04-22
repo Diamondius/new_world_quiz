@@ -1,0 +1,5 @@
+<resources>
+    <string name="facebook_app_id">513922539303777</string>
+    <string name="fb_login_protocol_scheme">fb513922539303777</string>
+    <string name="app_name">NW Quiz</string>
+</resources>

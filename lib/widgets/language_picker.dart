@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:new_world_quiz/helpers/screen_size_helper.dart';
 import 'package:provider/provider.dart';
 
@@ -25,8 +26,9 @@ class _LanguagePickerState extends State<LanguagePicker> {
     _selectedLanguage = language.code; //Load the language from the provider
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 8),
+      height: screenHeight(context, dividedBy: 16),
       child: ListTile(
-        leading: Icon(Icons.language),
+        leading: Icon(FontAwesomeIcons.language),
         title: AutoSizeText(
           AppLocalizations.of(context).language,
           style: Theme.of(context).textTheme.overline,

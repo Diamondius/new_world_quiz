@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+//Helper functions to get back dividends of the size of the screen
 Size screenSize(BuildContext context) {
   return MediaQuery.of(context).size;
 }

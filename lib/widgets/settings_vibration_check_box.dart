@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:new_world_quiz/helpers/screen_size_helper.dart';
 import 'package:provider/provider.dart';
 
 import '../locale/app_localization.dart';
@@ -18,6 +19,7 @@ class _SettingsVibrationCheckBoxState extends State<SettingsVibrationCheckBox> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: screenHeight(context, dividedBy: 16),
       margin: const EdgeInsets.symmetric(vertical: 8),
       child: Consumer<Settings>(
         builder: (BuildContext context, Settings settings, Widget child) {

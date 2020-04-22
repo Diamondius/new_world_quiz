@@ -5,7 +5,7 @@
     "type": "text",
     "placeholders": {}
   },
-  "welcomeTo": "WELCOME TO",
+  "welcomeTo": "Welcome to",
   "@welcomeTo": {
     "description": "Title overhead welcome",
     "type": "text",
@@ -241,7 +241,7 @@
   },
   "feedbackEmpty": "Please write some feedback before sending",
   "@feedbackEmpty": {
-    "description": "Message for when someone leaves the feedback textfield empty",
+    "description": "Message for when someone leaves the feedback text field empty",
     "type": "text",
     "placeholders": {}
   },
@@ -326,6 +326,168 @@
   "longAnswerError": "Shorten the answer to fewer than X characters",
   "@longAnswerError": {
     "description": "Error you see when the answer form is too long",
+    "type": "text",
+    "placeholders": {}
+  },
+  "signIn": "Sign In",
+  "@signIn": {
+    "description": "Sign in page icon text",
+    "type": "text",
+    "placeholders": {}
+  },
+  "signUp": "Sign Up",
+  "@signUp": {
+    "description": "Sign up page icon text",
+    "type": "text",
+    "placeholders": {}
+  },
+  "signOut": "Logout",
+  "@signOut": {
+    "description": "Sign out page icon text",
+    "type": "text",
+    "placeholders": {}
+  },
+  "user": "User",
+  "@user": {
+    "description": "User page icon text",
+    "type": "text",
+    "placeholders": {}
+  },
+  "withEmail": "with E-Mail",
+  "@withEmail": {
+    "description": "Sign in with Email",
+    "type": "text",
+    "placeholders": {}
+  },
+  "offline": "Offline",
+  "@offline": {
+    "description": "Play without internet(offline)",
+    "type": "text",
+    "placeholders": {}
+  },
+  "or": "or",
+  "@or": {
+    "description": "Something OR another",
+    "type": "text",
+    "placeholders": {}
+  },
+  "password": "Password",
+  "@password": {
+    "description": "Password",
+    "type": "text",
+    "placeholders": {}
+  },
+  "email": "E-Mail",
+  "@email": {
+    "description": "E-Mail",
+    "type": "text",
+    "placeholders": {}
+  },
+  "userName": "Username",
+  "@userName": {
+    "description": "User Name",
+    "type": "text",
+    "placeholders": {}
+  },
+  "userNameFewChars": "Username must be longer than 4 letters",
+  "@userNameFewChars": {
+    "description": "User Name too few characters",
+    "type": "text",
+    "placeholders": {}
+  },
+  "invalidEmailOrPassword": "Invalid E-Mail or Password",
+  "@invalidEmailOrPassword": {
+    "description": "Invalid Email or Password",
+    "type": "text",
+    "placeholders": {}
+  },
+  "withGoogle": "with Google",
+  "@withGoogle": {
+    "description": "Sign in with Google",
+    "type": "text",
+    "placeholders": {}
+  },
+  "onFacebook": "with Facebook",
+  "@onFacebook": {
+    "description": "Sign in on Facebook",
+    "type": "text",
+    "placeholders": {}
+  },
+  "weakPassword": "Your password is too weak",
+  "@weakPassword": {
+    "description": "Your password is too weak",
+    "type": "text",
+    "placeholders": {}
+  },
+  "invalidEmail": "Your email is invalid",
+  "@invalidEmail": {
+    "description": "Your email is invalid",
+    "type": "text",
+    "placeholders": {}
+  },
+  "emailInUse": "Email is already in use on a different account",
+  "@emailInUse": {
+    "description": "Email is already in use on different account",
+    "type": "text",
+    "placeholders": {}
+  },
+  "invalidPassword": "You entered a wrong password",
+  "@invalidPassword": {
+    "description": "You entered a wrong password",
+    "type": "text",
+    "placeholders": {}
+  },
+  "userDisabled": "This user account has been disabled",
+  "@userDisabled": {
+    "description": "This user account has been disabled",
+    "type": "text",
+    "placeholders": {}
+  },
+  "tooManyAttemptsToSignIn": "Too many attempts to sign in as this user",
+  "@tooManyAttemptsToSignIn": {
+    "description": "Too many attempts to sign in as this user",
+    "type": "text",
+    "placeholders": {}
+  },
+  "invalidCredentials": "Your login credentials are invalid",
+  "@invalidCredentials": {
+    "description": "Your login credentials are invalid",
+    "type": "text",
+    "placeholders": {}
+  },
+  "userNotFound": "This user does not exist",
+  "@userNotFound": {
+    "description": "This user does not exist",
+    "type": "text",
+    "placeholders": {}
+  },
+  "errorVerification": "An error occurred while trying to send the verification E-Mail",
+  "@errorVerification": {
+    "description": "An error occurred while trying to send verification E-Mail",
+    "type": "text",
+    "placeholders": {}
+  },
+  "resetPassword": "Reset password",
+  "@resetPassword": {
+    "description": "Reset password",
+    "type": "text",
+    "placeholders": {}
+  },
+  "forgotPassword": "Forgot your password?",
+  "@forgotPassword": {
+    "description": "forgotPassword",
+    "type": "text",
+    "placeholders": {}
+  },
+  "resetEmailSent": "Reset password E-Mail sent",
+  "@resetEmailSent": {
+    "description": "Reset password E-Mail sent",
+    "type": "text",
+    "placeholders": {}
+  },
+  "unidentifiedError": "An undefined Error happened",
+  "@unidentifiedError": {
+    "description": "An undefined Error happened",
     "type": "text",
     "placeholders": {}
   }

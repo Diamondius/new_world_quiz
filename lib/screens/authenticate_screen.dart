@@ -1,29 +1,27 @@
-//Page that holds the bottom navigation bar and switches bodies according to the selected button
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../helpers/screen_size_helper.dart';
 import '../locale/app_localization.dart';
-import '../pages/custom_game_page.dart';
-import '../pages/settings_page.dart';
-import '../pages/user_page.dart';
-import '../pages/welcome_page.dart';
+import '../pages/sign_in_page.dart';
+import '../pages/sign_up_page.dart';
 import '../widgets/navigation_bar_icon_text.dart';
 import '../widgets/page_background.dart';
 
-class HomeScreen extends StatefulWidget {
-  static const String routeName = "/home"; //Name for the named route
+class AuthenticateScreen extends StatefulWidget {
+  static const String routeName = "/authenticate";
+
+  AuthenticateScreen({Key key}) : super(key: key);
 
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  _AuthenticateScreenState createState() => _AuthenticateScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _AuthenticateScreenState extends State<AuthenticateScreen> {
   int _selectedPageIndex = 0; //Page selected index
   List<Widget> _pages = [
-    WelcomePage(),
-    CustomGamePage(),
-    UserPage(),
-    SettingsPage(),
+    SignInPage(),
+    SignUpPage(),
   ]; //List of bodies to be loaded
   //Changes page index when bottom NavigationBar button is pressed
   void _selectScreen(int index) {
@@ -57,7 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomPadding: false,
+      resizeToAvoidBottomPadding: true,
       /*  appBar: _selectedPageIndex == 1 ? AppBar() : null,*/
       //Shared Background and measurements
       body: GestureDetector(
@@ -75,34 +73,18 @@ class _HomeScreenState extends State<HomeScreen> {
         selectedIconTheme: Theme.of(context).accentIconTheme,
         currentIndex: _selectedPageIndex,
         iconSize: screenHeight(context, dividedBy: 20),
-        elevation: 0,
-        fixedColor: Theme
-            .of(context)
-            .primaryColorDark,
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
+            icon: Icon(FontAwesomeIcons.signInAlt),
             title: NavigationBarIconText(
-              AppLocalizations.of(context).home,
+              AppLocalizations.of(context).signIn,
             ),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.play_circle_outline),
-            activeIcon: Icon(Icons.play_arrow),
+            icon: Icon(FontAwesomeIcons.pen),
             title: NavigationBarIconText(
-              AppLocalizations.of(context).play,
+              AppLocalizations.of(context).signUp,
             ),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person_outline),
-            activeIcon: Icon(Icons.person),
-            title: NavigationBarIconText(AppLocalizations
-                .of(context)
-                .user),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            title: NavigationBarIconText(AppLocalizations.of(context).settings),
           ),
         ],
         onTap: _selectScreen,

@@ -241,7 +241,7 @@
   },
   "feedbackEmpty": "Напиши пожалуйста отзыв.",
   "@feedbackEmpty": {
-    "description": "Message for when someone leaves the feedback textfield empty",
+    "description": "Message for when someone leaves the feedback text field empty",
     "type": "text",
     "placeholders": {}
   },

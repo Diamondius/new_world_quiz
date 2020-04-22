@@ -5,16 +5,21 @@ import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
 
+import './helpers/auth.dart';
 import './helpers/shared_preferences.dart';
 import './locale/app_localization.dart';
+import './models/user.dart';
 import './providers/games.dart';
 import './providers/language.dart';
 import './providers/questions.dart';
 import './providers/settings.dart';
+import './screens/authenticate_screen.dart';
 import './screens/end_of_game_screen.dart';
 import './screens/game_screen.dart';
 import './screens/home_screen.dart';
+import './screens/offline_game_screen.dart';
 import './screens/submit_feedback_screen.dart';
+import './widgets/wrapper.dart';
 
 void main() {
   runApp(
@@ -70,7 +75,8 @@ class _MyAppState extends State<MyApp> {
               ),
               ChangeNotifierProvider(
                 create: (_) => Settings(),
-              )
+              ),
+              StreamProvider<User>.value(value: AuthService().user),
             ],
             child: Consumer<Language>(
               builder: (context, language, child) {
@@ -89,7 +95,7 @@ class _MyAppState extends State<MyApp> {
                       body1: TextStyle(
                           color: Colors.deepPurple.shade900,
                           fontSize: 50,
-                          fontWeight: FontWeight.w500,
+                          fontWeight: FontWeight.w700,
                           fontFamily: "Alegreya"),
                       body2: TextStyle(
                           color: Colors.deepPurple.shade900,
@@ -100,9 +106,24 @@ class _MyAppState extends State<MyApp> {
                           color: Colors.white,
                           fontSize: 20,
                           fontFamily: "Alegreya"),
-                      title: language.titleTextStyle(),
-                      overline: language.overheadTextStyle(),
-                      subtitle: language.settingsTextStyle(),
+                      title: TextStyle(
+                        color: Colors.deepPurple.shade900,
+                        fontSize: 50,
+                        fontWeight: FontWeight.w900,
+                        fontFamily: "Alegreya",
+                      ),
+                      overline: TextStyle(
+                          color: Colors.deepPurple.shade900,
+                          fontSize: 50,
+                          fontWeight: FontWeight.w700,
+                          fontFamily: "Alegreya",
+                          fontStyle: FontStyle.italic),
+                      subtitle: TextStyle(
+                          color: Colors.deepPurple.shade900,
+                          fontSize: 50,
+                          fontWeight: FontWeight.w500,
+                          fontFamily: "Alegreya",
+                          fontStyle: FontStyle.italic),
                     ),
                   ),
                   routes: {
@@ -111,6 +132,9 @@ class _MyAppState extends State<MyApp> {
                     EndOfGameScreen.routeName: (ctx) => EndOfGameScreen(),
                     SubmitFeedbackScreen.routeName: (ctx) =>
                         SubmitFeedbackScreen(),
+                    AuthenticateScreen.routeName: (ctx) => AuthenticateScreen(),
+                    Wrapper.routeName: (ctx) => Wrapper(),
+                    OfflineGameScreen.routeName: (ctx) => OfflineGameScreen(),
                   },
                   locale: this._locale,
                   localizationsDelegates: [
@@ -119,7 +143,7 @@ class _MyAppState extends State<MyApp> {
                     GlobalWidgetsLocalizations.delegate,
                   ],
                   supportedLocales: AppLocalizations.delegate.supportedLocales,
-                  home: HomeScreen(),
+                  home: Wrapper(),
                 );
               },
             ),

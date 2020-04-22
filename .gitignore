@@ -4,6 +4,7 @@
 *.log
 *.pyc
 *.swp
+*.jks
 .DS_Store
 .atom/
 .buildlog/
@@ -65,7 +66,6 @@ unlinked_spec.ds
 **/android/**/GeneratedPluginRegistrant.java
 **/android/key.properties
 /android/app/google-services.json
-*.jks
 
 # iOS/XCode related
 **/ios/**/*.mode1v3

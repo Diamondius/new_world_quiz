@@ -69,8 +69,8 @@ class Game {
   }
 
   factory Game.fromJson(Map<String, dynamic> json) {
-    var questionIdsText = jsonDecode(json["questionIds"]);
-    List<int> questionIds =
+    final questionIdsText = jsonDecode(json["questionIds"]);
+    final List<int> questionIds =
         questionIdsText != null ? List.from(questionIdsText) : null;
     return Game(
       numberOfQuestions: json['numberOfQuestions'],

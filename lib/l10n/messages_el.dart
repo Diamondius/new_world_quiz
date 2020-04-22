@@ -37,10 +37,15 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Προσαρμοσμένο Παιχνίδι"),
         "difficulty": MessageLookupByLibrary.simpleMessage("Δυσκολία"),
         "easy": MessageLookupByLibrary.simpleMessage("Εύκολο"),
+    "email": MessageLookupByLibrary.simpleMessage("E-Mail"),
+    "emailInUse": MessageLookupByLibrary.simpleMessage(
+        "Το Email είναι ήδη σε χρήση σε διαφορετικό λογαριασμό"),
         "emptyAnswerError": MessageLookupByLibrary.simpleMessage(
             "Παρακαλώ γράψτε μια απάντηση!"),
         "emptyQuestionError": MessageLookupByLibrary.simpleMessage(
             "Παρακαλώ γράψτε μια ερώτηση!"),
+    "errorVerification": MessageLookupByLibrary.simpleMessage(
+        "Ένα σφάλμα δημιουργήθηκε προσπαθώντας να στείλουμε το E-Mail επιβεβαίωσης"),
         "evaluationGood": MessageLookupByLibrary.simpleMessage(
             "Αποδείξατε ότι έχετε αρκετά καλή γνώση της Αγίας Γραφής! Συνεχίστε να προοδεύετε"),
         "evaluationGreat": MessageLookupByLibrary.simpleMessage(
@@ -60,10 +65,20 @@ class MessageLookup extends MessageLookupByLibrary {
             "Παρακαλώ γράψτε σχόλια πριν αποστείλετε την φόρμα!"),
         "feedbackFewChars": MessageLookupByLibrary.simpleMessage(
             "Παρακαλώ γράψτε πάνω από 10 χαρακτήρες!"),
+    "forgotPassword":
+    MessageLookupByLibrary.simpleMessage("Ξεχάσατε τον κωδικό σας?"),
         "go": MessageLookupByLibrary.simpleMessage("Αποστολή"),
         "hard": MessageLookupByLibrary.simpleMessage("Δύσκολο"),
         "home": MessageLookupByLibrary.simpleMessage("Κεντρική"),
         "inDepth": MessageLookupByLibrary.simpleMessage("ΣΕ ΒΑΘΟΣ"),
+    "invalidCredentials": MessageLookupByLibrary.simpleMessage(
+        "Τα πιστοποιητικά εισόδου είναι λανθασμένα"),
+    "invalidEmail":
+    MessageLookupByLibrary.simpleMessage("Το email είναι άκυρο"),
+    "invalidEmailOrPassword":
+    MessageLookupByLibrary.simpleMessage("Λανθασμένο E-Mail η Κωδικός"),
+    "invalidPassword":
+    MessageLookupByLibrary.simpleMessage("Εισάγατε λάθος κωδικό"),
         "language": MessageLookupByLibrary.simpleMessage("Γλώσσα"),
         "longAnswerError": MessageLookupByLibrary.simpleMessage(
             "Μειώστε την απάντηση σε λιγότερους από 100 χαρακτήρες!"),
@@ -71,6 +86,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "noSource": MessageLookupByLibrary.simpleMessage("Δεν υπάρχει πηγή"),
         "normal": MessageLookupByLibrary.simpleMessage("Κανονικό"),
         "nwQuiz": MessageLookupByLibrary.simpleMessage("ΚΟΥΙΖ ΝΕΟΥ ΚΟΣΜΟΥ"),
+    "offline": MessageLookupByLibrary.simpleMessage("Εκτός Σύνδεσης"),
+    "onFacebook": MessageLookupByLibrary.simpleMessage("με Facebook"),
+    "or": MessageLookupByLibrary.simpleMessage("ή"),
+    "password": MessageLookupByLibrary.simpleMessage("Κωδικός"),
         "play": MessageLookupByLibrary.simpleMessage("Παίξτε"),
         "question": MessageLookupByLibrary.simpleMessage("Ερώτηση"),
         "questions": MessageLookupByLibrary.simpleMessage("Ερωτήσεις"),
@@ -81,6 +100,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Αναφορά Ερώτησης"),
         "reportQuestionUnderline": MessageLookupByLibrary.simpleMessage(
             "Παρακαλώ πείτε μας το πρόβλημα με αυτή την ερώτηση"),
+    "resetEmailSent": MessageLookupByLibrary.simpleMessage(
+        "Το E-Mail επαναφοράς κωδικού στάλθηκε"),
+    "resetPassword":
+    MessageLookupByLibrary.simpleMessage("Επαναφορά κωδικού"),
         "settings": MessageLookupByLibrary.simpleMessage("Ρυθμίσεις"),
         "shareQuestion":
             MessageLookupByLibrary.simpleMessage("Μοιραστέτε μια ερώτηση"),
@@ -90,13 +113,32 @@ class MessageLookup extends MessageLookupByLibrary {
             "Παρακαλώ μοιραστείτε σχόλια για το παιχνίδι"),
         "shortQuestionError": MessageLookupByLibrary.simpleMessage(
             "Παρακαλώ μεγαλώστε την ερώτηση!"),
+    "signIn": MessageLookupByLibrary.simpleMessage("Είσοδος"),
+    "signOut": MessageLookupByLibrary.simpleMessage("Αποσύνδεση"),
+    "signUp": MessageLookupByLibrary.simpleMessage("Εγγραφή"),
         "sound": MessageLookupByLibrary.simpleMessage("Ήχοι"),
         "source": MessageLookupByLibrary.simpleMessage("Πηγή"),
         "sourceAlertWindowDescription": MessageLookupByLibrary.simpleMessage(
             "Θα μεταβείτε στον περιηγητή,, στην σελίδα της διαδικτυακής βιβλιοθήκης που έχει την πηγή ύλης της ερώτησης.\n Η σελίδα θα είναι στα Αγγλικά. Μπορείτε να χρησιμοποιήσετε το διπλό βέλος για να αλλάξετε γλώσσα.\n Αν επιλέξετε να προχωρήσετε, η ερώτηση θα μετρήσει ως χαμένη."),
+    "tooManyAttemptsToSignIn": MessageLookupByLibrary.simpleMessage(
+        "Πάρα πολλές προσπάθειες εισόδου για αυτό το χρήστη"),
         "totalPoints": MessageLookupByLibrary.simpleMessage("Συνολικοί Πόντοι"),
+    "unidentifiedError": MessageLookupByLibrary.simpleMessage(
+        "Ένα απροσδιόρηστο σφάλμα έχει συμβεί"),
+    "user": MessageLookupByLibrary.simpleMessage("Χρήστης"),
+    "userDisabled": MessageLookupByLibrary.simpleMessage(
+        "Αυτός ο λογαριασμός χρήστη έχει απενεργοποιηθεί"),
+    "userName": MessageLookupByLibrary.simpleMessage("Όνομα Χρήστη"),
+    "userNameFewChars": MessageLookupByLibrary.simpleMessage(
+        "Το όνομα χρήστη πρέπει να περιέχει περισσότερους από 4 χαρακτήρες"),
+    "userNotFound":
+    MessageLookupByLibrary.simpleMessage("Αυτός ο χρήστης δεν υπάρχει"),
         "vibration": MessageLookupByLibrary.simpleMessage("Δόνηση"),
-        "welcomeTo": MessageLookupByLibrary.simpleMessage("ΚΑΛΩΣΟΡΙΣΑΤΕ ΣΤΟ"),
+    "weakPassword": MessageLookupByLibrary.simpleMessage(
+        "Ο Κωδικός είναι πολύ αδύναμος"),
+    "welcomeTo": MessageLookupByLibrary.simpleMessage("Καλωσορίσατε στο"),
+    "withEmail": MessageLookupByLibrary.simpleMessage("με E-Mail"),
+    "withGoogle": MessageLookupByLibrary.simpleMessage("με Google"),
         "wrong": MessageLookupByLibrary.simpleMessage("Λάθος"),
         "wrongAnswer": MessageLookupByLibrary.simpleMessage("Λάθος απάντηση")
       };

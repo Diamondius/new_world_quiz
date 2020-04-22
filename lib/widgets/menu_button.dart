@@ -8,8 +8,10 @@ class MenuButton extends StatelessWidget {
   final Function buttonPressed;
   final String buttonText;
   final bool enabled;
+  final IconData icon;
 
-  MenuButton(this.buttonText, this.buttonPressed, {this.enabled = true});
+  MenuButton(this.buttonText, this.buttonPressed,
+      {this.enabled = true, this.icon});
 
   @override
   Widget build(BuildContext context) {
@@ -21,11 +23,35 @@ class MenuButton extends StatelessWidget {
         elevation: 8,
         color: Theme.of(context).primaryColor,
         onPressed: enabled ? buttonPressed : null,
-        child: AutoSizeText(
-          buttonText,
-          style: Theme.of(context).textTheme.button,
+        child: icon == null
+            ? autoSizeTextStandard(context)
+            : Row(
+          children: <Widget>[
+            SizedBox(
+              width: screenWidth(context, dividedBy: 20),
+            ),
+            Icon(
+              icon,
+              color: Colors.white,
+            ),
+            SizedBox(
+              width: screenWidth(context, dividedBy: 10),
+            ),
+            autoSizeTextStandard(context),
+          ],
         ),
       ),
+    );
+  }
+
+  AutoSizeText autoSizeTextStandard(BuildContext context) {
+    return AutoSizeText(
+      buttonText,
+      textAlign: TextAlign.center,
+      style: Theme
+          .of(context)
+          .textTheme
+          .button,
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+//The gradient for the background of the app
 class BackgroundGradient extends BoxDecoration {
   @override
   Gradient get gradient => LinearGradient(

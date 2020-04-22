@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:new_world_quiz/classes/custom_input_decoration.dart';
 import 'package:new_world_quiz/locale/app_localization.dart';
 
 class FeedbackInputForm extends StatefulWidget {
@@ -22,19 +23,10 @@ class _FeedbackInputFormState extends State<FeedbackInputForm> {
         key: widget._form,
         child: TextFormField(
           style: Theme.of(context).textTheme.body2,
-          decoration: InputDecoration(
-            labelText: AppLocalizations.of(context).feedback,
-            labelStyle: Theme.of(context).textTheme.overline,
-            alignLabelWithHint: true,
-            border: OutlineInputBorder(
-              borderSide: BorderSide(
-                color: Theme.of(context).primaryColorDark,
-              ),
-              borderRadius: BorderRadius.all(
-                Radius.circular(10),
-              ),
-            ),
-          ),
+          decoration: customInputDecoration(
+              AppLocalizations
+                  .of(context)
+                  .feedback, context),
           textInputAction: TextInputAction.done,
           keyboardType: TextInputType.multiline,
           maxLines: 6,

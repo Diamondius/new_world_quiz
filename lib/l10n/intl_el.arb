@@ -5,7 +5,7 @@
     "type": "text",
     "placeholders": {}
   },
-  "welcomeTo": "ΚΑΛΩΣΟΡΙΣΑΤΕ ΣΤΟ",
+  "welcomeTo": "Καλωσορίσατε στο",
   "@welcomeTo": {
     "description": "Title overhead welcome",
     "type": "text",
@@ -241,7 +241,7 @@
   },
   "feedbackEmpty": "Παρακαλώ γράψτε σχόλια πριν αποστείλετε την φόρμα!",
   "@feedbackEmpty": {
-    "description": "Message for when someone leaves the feedback textfield empty",
+    "description": "Message for when someone leaves the feedback text field empty",
     "type": "text",
     "placeholders": {}
   },
@@ -326,6 +326,168 @@
   "longAnswerError": "Μειώστε την απάντηση σε λιγότερους από 100 χαρακτήρες!",
   "@longAnswerError": {
     "description": "Error you see when the answer form is too long",
+    "type": "text",
+    "placeholders": {}
+  },
+  "signIn": "Είσοδος",
+  "@signIn": {
+    "description": "Sign in page icon text",
+    "type": "text",
+    "placeholders": {}
+  },
+  "signUp": "Εγγραφή",
+  "@signUp": {
+    "description": "Sign up page icon text",
+    "type": "text",
+    "placeholders": {}
+  },
+  "signOut": "Αποσύνδεση",
+  "@signOut": {
+    "description": "Sign out page icon text",
+    "type": "text",
+    "placeholders": {}
+  },
+  "user": "Χρήστης",
+  "@user": {
+    "description": "User page icon text",
+    "type": "text",
+    "placeholders": {}
+  },
+  "withEmail": "με E-Mail",
+  "@withEmail": {
+    "description": "Sign in with Email",
+    "type": "text",
+    "placeholders": {}
+  },
+  "offline": "Εκτός Σύνδεσης",
+  "@offline": {
+    "description": "Play without internet(offline)",
+    "type": "text",
+    "placeholders": {}
+  },
+  "or": "ή",
+  "@or": {
+    "description": "Something OR another",
+    "type": "text",
+    "placeholders": {}
+  },
+  "password": "Κωδικός",
+  "@password": {
+    "description": "Password",
+    "type": "text",
+    "placeholders": {}
+  },
+  "email": "E-Mail",
+  "@email": {
+    "description": "E-Mail",
+    "type": "text",
+    "placeholders": {}
+  },
+  "userName": "Όνομα Χρήστη",
+  "@userName": {
+    "description": "User Name",
+    "type": "text",
+    "placeholders": {}
+  },
+  "userNameFewChars": "Το όνομα χρήστη πρέπει να περιέχει περισσότερους από 4 χαρακτήρες",
+  "@userNameFewChars": {
+    "description": "User Name too few characters",
+    "type": "text",
+    "placeholders": {}
+  },
+  "invalidEmailOrPassword": "Λανθασμένο E-Mail η Κωδικός",
+  "@invalidEmailOrPassword": {
+    "description": "Invalid Email or Password",
+    "type": "text",
+    "placeholders": {}
+  },
+  "withGoogle": "με Google",
+  "@withGoogle": {
+    "description": "Sign in with Google",
+    "type": "text",
+    "placeholders": {}
+  },
+  "onFacebook": "με Facebook",
+  "@onFacebook": {
+    "description": "Sign in on Facebook",
+    "type": "text",
+    "placeholders": {}
+  },
+  "weakPassword": "Ο Κωδικός είναι πολύ αδύναμος",
+  "@weakPassword": {
+    "description": "Your password is too weak",
+    "type": "text",
+    "placeholders": {}
+  },
+  "invalidEmail": "Το email είναι άκυρο",
+  "@invalidEmail": {
+    "description": "Your email is invalid",
+    "type": "text",
+    "placeholders": {}
+  },
+  "emailInUse": "Το Email είναι ήδη σε χρήση σε διαφορετικό λογαριασμό",
+  "@emailInUse": {
+    "description": "Email is already in use on different account",
+    "type": "text",
+    "placeholders": {}
+  },
+  "invalidPassword": "Εισάγατε λάθος κωδικό",
+  "@invalidPassword": {
+    "description": "You entered a wrong password",
+    "type": "text",
+    "placeholders": {}
+  },
+  "userDisabled": "Αυτός ο λογαριασμός χρήστη έχει απενεργοποιηθεί",
+  "@userDisabled": {
+    "description": "This user account has been disabled",
+    "type": "text",
+    "placeholders": {}
+  },
+  "tooManyAttemptsToSignIn": "Πάρα πολλές προσπάθειες εισόδου για αυτό το χρήστη",
+  "@tooManyAttemptsToSignIn": {
+    "description": "Too many attempts to sign in as this user",
+    "type": "text",
+    "placeholders": {}
+  },
+  "invalidCredentials": "Τα πιστοποιητικά εισόδου είναι λανθασμένα",
+  "@invalidCredentials": {
+    "description": "Your login credentials are invalid",
+    "type": "text",
+    "placeholders": {}
+  },
+  "userNotFound": "Αυτός ο χρήστης δεν υπάρχει",
+  "@userNotFound": {
+    "description": "This user does not exist",
+    "type": "text",
+    "placeholders": {}
+  },
+  "errorVerification": "Ένα σφάλμα δημιουργήθηκε προσπαθώντας να στείλουμε το E-Mail επιβεβαίωσης",
+  "@errorVerification": {
+    "description": "An error occurred while trying to send verification E-Mail",
+    "type": "text",
+    "placeholders": {}
+  },
+  "resetPassword": "Επαναφορά κωδικού",
+  "@resetPassword": {
+    "description": "Reset password",
+    "type": "text",
+    "placeholders": {}
+  },
+  "forgotPassword": "Ξεχάσατε τον κωδικό σας?",
+  "@forgotPassword": {
+    "description": "forgotPassword",
+    "type": "text",
+    "placeholders": {}
+  },
+  "resetEmailSent": "Το E-Mail επαναφοράς κωδικού στάλθηκε",
+  "@resetEmailSent": {
+    "description": "Reset password E-Mail sent",
+    "type": "text",
+    "placeholders": {}
+  },
+  "unidentifiedError": "Ένα απροσδιόρηστο σφάλμα έχει συμβεί",
+  "@unidentifiedError": {
+    "description": "An undefined Error happened",
     "type": "text",
     "placeholders": {}
   }
